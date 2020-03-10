@@ -1,0 +1,110 @@
+---
+title: "Case Studies"
+output: 
+  html_document:
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+title: "STA 440: Case Studies in the Practice of Statistics"
+description: "Students apply statistical analysis skills to in-depth data analysis projects ranging across diverse application areas. Students practice cutting-edge statistical methods and communicate their results both technically and non-technically via presentations and written reports. Prerequisite: STA 360. QS, W."
+markup: "mmark"
+---
+
+
+
+#Welcome to STA440!
+
+### Goal of the Course
+
+The goal of STA 440 is to prepare you for work as a practicing statistician. Important skills required of practicing statisticians (in addition to having a great set of tools in the statistics toolbox!) include creativity, critical thinking, the ability to identify needed new skills and to learn them with minimal direction, the ability to craft a statistical analysis plan to fit a scientific hypothesis or question, teamwork, and the ability to communicate to a variety of audiences (including other statisticians, experts in areas other than statistics, a supervisor at work, and the general public, among others). 
+
+Lectures will include some new material you may not have seen, as well as material that you have already seen but that is often poorly understood. My goal is for you to be as prepared as possible to tackle real-world problems. This means that questions of interest will typically not be framed in much statistical detail -- part of your job will be to figure out which tools to use to analyze the data. 
+
+Flexibility, work ethic, knowledge of statistical science, pragmatism, the ability to proceed with minimal direction, professionalism, communication skills, and the willingness to try new things are all strong predictors of success in STA 440 (as well as in the working world). Don't worry if you haven't mastered all of these -- we'll work on them in class! 
+
+### Class Meetings
+
+<font color="#6CA0DC"><i class="fas fa-university fa-lg"></i></font> &nbsp; Old Chem 116
+
+<font color="#6CA0DC"><i class="fas fa-calendar-alt fa-lg"></i></font> &nbsp; MWF 11:45 - 1:00 (usually Mondays will be labs, but sometimes lab and lecture will be swapped)
+
+
+### Teaching team and office hours 
+
+
+Note: office hours may vary due to travel and other commitments. Revisions to office hours will be noted via e-mail and on my webpage. 
+
+| Team member | Office hours | Location |
+| ----------  | -------------------------------------         | ---- |
+| [Professor Amy Herring](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:amy.herring@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Wednesday and Thursday 1:45-2:45pm | 208 Old Chemistry |
+ [TA Xu Chen](https://stat.duke.edu/people/xu-chen)  <a href="mailto:xu.chen2@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Friday 1:30-3:30 | 203B Old Chemistry
+ [TA Isaac Lavine](https://stat.duke.edu/people/isaac-lavine)  <a href="mailto:isaac.lavinei@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | Monday 9:00-10:00am and 2:00-3:00pm | 203B Old Chemistry
+ 
+                  
+
+
+### Materials
+
+You should have access to a laptop and bring it to every class, fully charged. Texts and readings will be assigned as needed. The instructor and TA's will support computation in R and RStudio. Students are free to use any software they wish.
+
+
+### Topics and Important Dates
+
+STA 440 contain a mixture of short lecture, lab, and work sessions at the usual class and lab times. Frequent mini-assessments will be provided in class and lab to check mastery and identify areas for additional focus.
+
+Note: this schedule is approximate and is likely to be modified as the course progresses. Some lab sessions will be swapped with lectures due to instructor travel or course timing. Assignments are due at the beginning of class unless otherwise specified. 
+
+
+
+|Date           |Topic                      |Deliverables     |
+| ----------    | ---------------------------         | --------------- |
+| August 24     | Welcome and Introductions        | Scientific Writing (in class)        |
+| August 26     | One Way ANOVA: Scalar and Matrix Formulations    |   Getting to Know You Sheet              |
+| August 28     |  MLE's, Contrasts, Coding Schemes, and Interaction      |    Scientific Writing: ANOVA Results (in class)     |
+| August 31    |  Lab: Hands-on with ANOVA     |  Group Lab Reports      |
+| September 2   | Random Effects ANOVA | Group Policies Document Due |
+| September 4   | Random Effects ANOVA|  |
+| September 7  | Bayesian Estimation | Assignment 1 Due  |
+| September 9  | Lab: Gibbs Sampling  |    |
+| September 11  |Bayesian Estimation |  |
+| September 14  | Lab: Visualizing Estimates |    |
+| September 116  | Random Effects ANCOVA | Second lab report due  |
+| September 18  | Higher Level Multi-Level Models and Case Study 1 Introduction |   |
+| September 21  | Lab: Gibbs Sampling | Assignment 2 Due  |
+| September 23  | Exam Review |  |
+| September 25  | Exam 1 (in class)  | Exam 1 (in class) |
+| September 28  |  Lab: Group Work on Case Study 1        |   |
+| September 30     | Linear Mixed Effects Models | Exam 1 Returned (my deliverable)  | 
+| October 2     | Lab: Help, I'm Behind! Hands-on Analysis and Q&A | Midsemester Grades Due (my deliverable)  |
+| October 5    | Fall break  |  |
+| October 7   |  Diagnostics and Influence Measures |  |
+| October 9   | Bayesian Linear Mixed Effects Model for Longitudinal Data |   |
+| October 12    | Lab: Longitudinal Data |   |
+| October 14    | Generalized Linear Mixed Effects Models | HW3 Released |
+| October 16    | GLMM + 2 Case Study Presentations |  Case Study 1 Due, Group Lab Reports |
+| October 19    | Lab |   | 
+| October 21    | 4 Case Study Presentations |  |
+| October 23   | 4 Case Study Presentations, GLM  | Reproducibility Evaluations Due  | 
+| October 26    | Lab: Hierarchical Centering | Assignment 3 Due  | 
+| October 28    | Crossed/Non-Nested Random Effects, Case Study 2 Introduction  |    |
+| October 30   | Application: Election Prediction |  |
+| November 2    | Lab: Who Votes? |   | 
+| November 4   | Measurement Error |  |
+| November 6   | Missing Data  |  |
+| November 9   | Lab: Who Votes? |   |
+| November 11   | Application: Meta Analysis | Group Lab Reports |
+| November 13   | Multilevel Categorical Outcomes |  |
+| November 18   | Assignment 4 Presentations | Assignment 4 Due (9am)  |
+| November 16   | Lab: Exam Review |  | 
+| November 18   | Assignment 4 Presentations |  |
+| November 20   | Exam 2 (in class) | Exam 2 (in class) |
+| November 23    | Make-Up Day (exam/assignment replacement opportunity) |  |
+| November 30   | 5 Case Study 2 Presentations | Case Study 2 Due (8 AM NOT AT CLASS TIME!) |
+| December 2   | 5 Case Study 2 Presentations |  |
+| December 4   | 5 Case Study 2 Presentations |  |
+| December XX   | 3 hours of 5 Case Study 2 Presentations |  |

@@ -1,0 +1,34 @@
+name: Case Studies in the Practice of Statistics
+output_dir: '.'
+navbar:
+  title: Case Studies
+  type: inverse
+  left:
+  - text: Home
+    href: index.html
+  - text: Policies
+    href: policies.html
+  - text: Duke Readers 
+    href: linalg.html
+  - text: Regression and ANOVA
+    href: anova01.html
+  - text: Election Prediction
+    href: elec02.html
+  - text: Fun stuff
+    href: fun03.html
+  
+
+  
+
+output:html_document:
+  theme: yeti
+  highlight: tango
+  fig_caption: yes
+  toc: yes
+  toc_float:
+    collapsed: no
+    smooth_scroll: yes
+  css: styles.css
+  lib_dir: site_libs
+  self_contained: no
+

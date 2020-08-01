@@ -8,14 +8,14 @@ navbar:
     href: index.html
   - text: Policies
     href: policies.html
-  - text: Duke Readers 
-    href: linalg.html
-  - text: Regression and ANOVA
-    href: anova01.html
+  - text: Lifespans of World Leaders 
+    href: leaders.html
+  - text: Wearables and Health
+    href: wear02.html
   - text: Election Prediction
-    href: elec02.html
-  - text: Fun stuff
-    href: fun03.html
+    href: elec03.html
+  - text: Individual Project
+    href: individual.html
   
 
   

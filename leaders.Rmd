@@ -1,0 +1,80 @@
+---
+title: "Case Study 1: Lifespans of World Leaders"
+---
+
+```{r, echo=FALSE, include=FALSE}
+library(kableExtra)
+library(knitr)
+library(tidyverse)
+```
+
+![](images/naruhitopope.jpg){width=4in}  ![](images/obamadalailama.jpg){width=4in}
+
+# Learning Objectives
+
+- gain experience in critical evaluation of statistical work and manuscripts
+- solidify skills in reproducible research
+- learn basics of survival analysis
+- refine skills in expressing models mathematically
+- express models clearly and succinctly in mathematical notation
+- interpret model results in clear language accessible to general readers
+
+# Questions of Interest
+
+- How are year of birth and type of leadership related to lifespan of leaders? 
+- Does any relationship between year of birth and lifespan depend on the type of leadership?
+- What is the probability that the 14th Dalai Lama will have a longer lifespan than Pope Francis?  What is the probability that President Obama will have a longer lifespan than Emperor Naruhito?
+
+# Case Study Goals
+
+- Identify an excellent statistical model for predicting lifespan of selected world leaders.
+- Provide a comprehensive interpretation of your model, explaining how year of birth and type of leadership are associated with longevity.
+- Provide point and interval predictions of lifespan of living leaders in the data.
+- Estimate and describe the posterior distribution of the probability that the 14th Dalai Lama will live longer than Pope Francis
+- Estimate and describe the posterior distribution of the probability that President Obama will live longer than Emperor Naruhito
+
+# Data
+
+- Data for this case study are on Sakai, including the following
+  - Data from the original paper for replication
+  - Data on additional world leaders (US Presidents, Chinese emperors, Japanese emperors, Popes, Dalai Lamas)
+
+# Assignments and Reports
+
+- Formal evaluation of Popes paper (Individual assignment due 8/21). Each student will reproduce the analysis in the paper (using either method), update Figure 4 using current data on the two living popes, and provide a peer review of the manuscript.
+
+- Report, reproducible code, and video (Group assignment due 8/28: produce a 8 page (maximum) report using R markdown that clearly addresses the case study goals and questions of interest. This report should follow the format of a standard scientific report and should include sections for the introduction, methods, results, and discussion. The methods section should clearly identify the approach to model selection and evaluation, and the results section should clearly specify the final model selected and provide some evaluation of the appropriateness of the model used. Code should be fully reproducible. The maximum duration of the video is 5 minutes.
+
+- Peer review of reports (Individual assignment due 8/31): using the peer review rubric provided, provide constructive feedback on the other group's report you have been assigned. Compile the R markdown file and discuss reproducibility of the code.
+
+- Revised report and response to reviews (Group assignment due 9/7): groups may submit revised reports and must submit a point-by-point response to the review comments provided
+
+- Peer (team member) evaluations (Individuals assignment due 9/7): each team member will submit an evaluation of the other members of the team, including how the team worked together and whether all team members deserve the same grade
+
+- Peer reviewer evaluations (Group assignment due 9/7): each group will provide feedback to peer reviewers regarding the usefulness of their comments on the first submission
+
+
+
+
+# Other Resources on Sakai
+
+Stander, J., Dalla Valle, L., and  Cortina-Borja, M. (2018). A Bayesian Survival Analysis of a Historical Dataset: How Long Do Popes Live?  *The American Statistician* 72(4):368-375. 
+
+Excerpts from preprint of Nolan and Stoudt's *Communicating with Data: The Art of Writing for Data Science* are available in the Sakai folder for the case study. These excerpts deal with the structure of a statistical report and how to describe data.
+
+
+
+
+
+# Video Lectures (see Sakai for videos)
+
+- Introduction to the Weibull Distribution
+
+- Characterizing Time in Survival Analysis
+
+- Writing the Stander et al model
+
+
+
+
+

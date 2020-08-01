@@ -11,7 +11,7 @@ navbar:
   - text: Lifespans of World Leaders 
     href: leaders.html
   - text: Wearables and Health
-    href: wear02.html
+    href: detectstress.html
   - text: Election Prediction
     href: elec03.html
   - text: Individual Project

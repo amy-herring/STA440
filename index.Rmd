@@ -63,48 +63,45 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 
 |Date           |Topic                      |Deliverables     |
 | ----------    | ---------------------------         | --------------- |
-| August 24     | Welcome and Introductions        | Scientific Writing (in class)        |
-| August 26     | Matrix Formulation of Linear Models   |   Getting to Know You Sheet              |
-| August 28     |  MLE's, Contrasts, Coding Schemes, and Interaction      |    Scientific Writing: ANOVA Results (in class)     |
-| August 31    |  Lab: Hands-on with ANOVA     |  Group Lab Reports      |
-| September 2   | Random Effects ANOVA | Group Policies Document Due |
-| September 4   | Random Effects ANOVA|  |
-| September 7  | Bayesian Estimation | Assignment 1 Due  |
-| September 9  | Lab: Gibbs Sampling  |    |
-| September 11  |Bayesian Estimation |  |
-| September 14  | Lab: Visualizing Estimates |    |
-| September 16  | Random Effects ANCOVA | Second lab report due  |
-| September 18  | Higher Level Multi-Level Models and Case Study 1 Introduction |   |
-| September 21  | Lab: Gibbs Sampling | Assignment 2 Due  |
-| September 23  | Exam Review |  |
-| September 25  | Exam 1 (in class)  | Exam 1 (in class) |
-| September 28  |  Lab: Group Work on Case Study 1        |   |
-| September 30     | Linear Mixed Effects Models | Exam 1 Returned (my deliverable)  | 
-| October 2     | Lab: Help, I'm Behind! Hands-on Analysis and Q&A | Midsemester Grades Due (my deliverable)  |
-| October 5    | Fall break  |  |
-| October 7   |  Diagnostics and Influence Measures |  |
-| October 9   | Bayesian Linear Mixed Effects Model for Longitudinal Data |   |
-| October 12    | Lab: Longitudinal Data |   |
-| October 14    | Generalized Linear Mixed Effects Models | HW3 Released |
-| October 16    | GLMM + 2 Case Study Presentations |  Case Study 1 Due, Group Lab Reports |
-| October 19    | Lab |   | 
-| October 21    | 4 Case Study Presentations |  |
-| October 23   | 4 Case Study Presentations, GLM  | Reproducibility Evaluations Due  | 
-| October 26    | Lab: Hierarchical Centering | Assignment 3 Due  | 
-| October 28    | Crossed/Non-Nested Random Effects, Case Study 2 Introduction  |    |
-| October 30   | Application: Election Prediction |  |
-| November 2    | Lab: Who Votes? |   | 
-| November 4   | Measurement Error |  |
-| November 6   | Missing Data  |  |
-| November 9   | Lab: Who Votes? |   |
-| November 11   | Application: Meta Analysis | Group Lab Reports |
-| November 13   | Multilevel Categorical Outcomes |  |
-| November 18   | Assignment 4 Presentations | Assignment 4 Due (9am)  |
-| November 16   | Lab: Exam Review |  | 
-| November 18   | Assignment 4 Presentations |  |
-| November 20   | Exam 2 (in class) | Exam 2 (in class) |
-| November 23    | Make-Up Day (exam/assignment replacement opportunity) |  |
-| November 30   | 5 Case Study 2 Presentations | Case Study 2 Due (8 AM NOT AT CLASS TIME!) |
-| December 2   | 5 Case Study 2 Presentations |  |
-| December 4   | 5 Case Study 2 Presentations |  |
-| December XX   | 3 hours of 5 Case Study 2 Presentations |  |
+| August 17     | Welcome and Introductions        |     |
+| August 19     | Case Study 0: Discrimination; Case Study 1: Lifespan of World Leaders   |    |
+| August 21     | Case Study 0 Wrap-Up    |    Getting to Know You Videos; Popes Individual Assignment     |
+| August 24    |  Lab    |      |
+| August 26  | | Project Proposals |
+| August 28   | Case Study 2: Detecting Stress Using Wearables; Meetings about Project Proposals | Case Study 1 |
+| August 31  |  Lab; Meetings about Project Proposals | Case Study 1 Peer Reviews  |
+| September 2  |   |    |
+| September 4  | |  |
+| September 7  |  |  Case Study 1 Response and Revision  |
+| September 9  |  |   |
+| September 11  |  |   |
+| September 14  |  | Project Introduction, Data Description, EDA |
+| September 16  |  |  |
+| September 18  |   | |
+| September 21  |       |   |
+| September 23     | |   | 
+| September 25     |  | Case Study 2  |
+| September 28    |  | Case Study 2 Peer Reviews |
+| September 30   |   |  |
+| October 2   |  | Midsemester grades (my deliverable)  |
+| October 5    | Case Study 3: Election Prediction | Case Study 2 Response and Revision  |
+| October 7    |  |  |
+| October 9    |  |   |
+| October 12    |  | Project Methods and Analysis Plan  | 
+| October 14    |  |  |
+| October 16   |   |   | 
+| October 19    |  |   | 
+| October 21    |  |    |
+| October 23   | | Case Study 3 |
+| October 26    |  |  Case Study 3 Peer Reviews | 
+| October 28   |  |  |
+| October 30   |  |  |
+| November 2   |  | Case Study 3 Response and Revision  |
+| November 4   |  | |
+| November 6   |  |  |
+| November 9   |  | Individual Project |
+| November 11   |  |  | 
+| November 13   |  |  |
+| November 16   |  |  |
+| TBD (final exam day)   | Project Response and Revision Due |  |
+

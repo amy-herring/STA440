@@ -17,7 +17,7 @@ markup: "mmark"
 
 
 
-#Welcome to STA440!
+# Welcome to STA440!
 
 ### Goal of the Course
 
@@ -64,7 +64,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 |Date           |Topic                      |Deliverables     |
 | ----------    | ---------------------------         | --------------- |
 | August 17     | Welcome and Introductions        |     |
-| August 19     | Case Study 0: Discrimination; Case Study 1: Lifespan of World Leaders   |    Getting to Know You Videos  |
+| August 19     | Case Study 0: Discrimination; Interaction; Case Study 1: Lifespan of World Leaders   |    Getting to Know You Videos  |
 | August 21     | Case Study 0 Wrap-Up    |   Popes Individual Assignment     |
 | August 24    |  Lab    |      |
 | August 26  | | Project Proposals |

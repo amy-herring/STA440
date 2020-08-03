@@ -64,8 +64,8 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 |Date           |Topic                      |Deliverables     |
 | ----------    | ---------------------------         | --------------- |
 | August 17     | Welcome and Introductions        |     |
-| August 19     | Case Study 0: Discrimination; Case Study 1: Lifespan of World Leaders   |    |
-| August 21     | Case Study 0 Wrap-Up    |    Getting to Know You Videos; Popes Individual Assignment     |
+| August 19     | Case Study 0: Discrimination; Case Study 1: Lifespan of World Leaders   |    Getting to Know You Videos  |
+| August 21     | Case Study 0 Wrap-Up    |   Popes Individual Assignment     |
 | August 24    |  Lab    |      |
 | August 26  | | Project Proposals |
 | August 28   | Case Study 2: Detecting Stress Using Wearables; Meetings about Project Proposals | Case Study 1 |
@@ -77,7 +77,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | September 11  |  |   |
 | September 14  |  | Project Introduction, Data Description, EDA |
 | September 16  |  |  |
-| September 18  |   | |
+| September 18  |   | Project Peer Reviews |
 | September 21  |       |   |
 | September 23     | |   | 
 | September 25     |  | Case Study 2  |
@@ -89,7 +89,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | October 9    |  |   |
 | October 12    |  | Project Methods and Analysis Plan  | 
 | October 14    |  |  |
-| October 16   |   |   | 
+| October 16   |   | Project Peer Reviews  | 
 | October 19    |  |   | 
 | October 21    |  |    |
 | October 23   | | Case Study 3 |
@@ -98,10 +98,9 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | October 30   |  |  |
 | November 2   |  | Case Study 3 Response and Revision  |
 | November 4   |  | |
-| November 6   |  |  |
-| November 9   |  | Individual Project |
-| November 11   |  |  | 
+| November 6   |  | Individual Project |
+| November 9   |  | Project Peer Reviews |
+| November 11   |  |   | 
 | November 13   |  |  |
-| November 16   |  |  |
-| TBD (final exam day)   | Project Response and Revision Due |  |
+| November 16   |  | Project Response and Revision Due |
 

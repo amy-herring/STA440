@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Case Study 1: Lifespans of World Leaders</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Case Studies</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="policies.html">Policies</a>
+</li>
+<li>
+  <a href="leaders.html">Lifespans of World Leaders</a>
+</li>
+<li>
+  <a href="detectstress.html">Wearables and Health</a>
+</li>
+<li>
+  <a href="elec03.html">Election Prediction</a>
+</li>
+<li>
+  <a href="individual.html">Individual Project</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Case Study 1: Lifespans of World Leaders</h1>
+
+</div>
+
+
+<p><img src="images/naruhitopope.jpg" style="width:4in" /> <img src="images/obamadalailama.jpg" style="width:4in" /></p>
+<div id="learning-objectives" class="section level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>gain experience in critical evaluation of statistical work and manuscripts</li>
+<li>solidify skills in reproducible research</li>
+<li>learn basics of survival analysis</li>
+<li>refine skills in expressing models mathematically</li>
+<li>express models clearly and succinctly in mathematical notation</li>
+<li>interpret model results in clear language accessible to general readers</li>
+</ul>
+</div>
+<div id="questions-of-interest" class="section level1">
+<h1>Questions of Interest</h1>
+<ul>
+<li>How are year of birth and type of leadership related to lifespan of leaders?</li>
+<li>Does any relationship between year of birth and lifespan depend on the type of leadership?</li>
+<li>What is the probability that the 14th Dalai Lama will have a longer lifespan than Pope Francis? What is the probability that President Obama will have a longer lifespan than Emperor Naruhito?</li>
+</ul>
+</div>
+<div id="case-study-goals" class="section level1">
+<h1>Case Study Goals</h1>
+<ul>
+<li>Identify an excellent statistical model for predicting lifespan of selected world leaders.</li>
+<li>Provide a comprehensive interpretation of your model, explaining how year of birth and type of leadership are associated with longevity.</li>
+<li>Provide point and interval predictions of lifespan of living leaders in the data.</li>
+<li>Estimate and describe the posterior distribution of the probability that the 14th Dalai Lama will live longer than Pope Francis</li>
+<li>Estimate and describe the posterior distribution of the probability that President Obama will live longer than Emperor Naruhito</li>
+</ul>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<ul>
+<li>Data for this case study are on Sakai, including the following
+<ul>
+<li>Data from the original paper for replication</li>
+<li>Data on additional world leaders (US Presidents, Chinese emperors, Japanese emperors, Popes, Dalai Lamas)</li>
+</ul></li>
+</ul>
+</div>
+<div id="assignments-and-reports" class="section level1">
+<h1>Assignments and Reports</h1>
+<ul>
+<li><p>Formal evaluation of Popes paper (Individual assignment due 8/21). Each student will reproduce the analysis in the paper (using either method), update Figure 4 using current data on the two living popes, and provide a peer review of the manuscript.</p></li>
+<li><p>Report, reproducible code, and video (Group assignment due 8/28: produce a 8 page (maximum) report using R markdown that clearly addresses the case study goals and questions of interest. This report should follow the format of a standard scientific report and should include sections for the introduction, methods, results, and discussion. The methods section should clearly identify the approach to model selection and evaluation, and the results section should clearly specify the final model selected and provide some evaluation of the appropriateness of the model used. Code should be fully reproducible. The maximum duration of the video is 5 minutes.</p></li>
+<li><p>Peer review of reports (Individual assignment due 8/31): using the peer review rubric provided, provide constructive feedback on the other group’s report you have been assigned. Compile the R markdown file and discuss reproducibility of the code.</p></li>
+<li><p>Revised report and response to reviews (Group assignment due 9/7): groups may submit revised reports and must submit a point-by-point response to the review comments provided</p></li>
+<li><p>Peer (team member) evaluations (Individuals assignment due 9/7): each team member will submit an evaluation of the other members of the team, including how the team worked together and whether all team members deserve the same grade</p></li>
+<li><p>Peer reviewer evaluations (Group assignment due 9/7): each group will provide feedback to peer reviewers regarding the usefulness of their comments on the first submission</p></li>
+</ul>
+</div>
+<div id="other-resources-on-sakai" class="section level1">
+<h1>Other Resources on Sakai</h1>
+<p>Stander, J., Dalla Valle, L., and Cortina-Borja, M. (2018). A Bayesian Survival Analysis of a Historical Dataset: How Long Do Popes Live? <em>The American Statistician</em> 72(4):368-375.</p>
+<p>Excerpts from preprint of Nolan and Stoudt’s <em>Communicating with Data: The Art of Writing for Data Science</em> are available in the Sakai folder for the case study. These excerpts deal with the structure of a statistical report and how to describe data.</p>
+</div>
+<div id="video-lectures-see-sakai-for-videos" class="section level1">
+<h1>Video Lectures (see Sakai for videos)</h1>
+<ul>
+<li><p>Introduction to the Weibull Distribution</p></li>
+<li><p>Characterizing Time in Survival Analysis</p></li>
+<li><p>Writing the Stander et al model</p></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

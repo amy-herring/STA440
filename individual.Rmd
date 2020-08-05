@@ -1,0 +1,56 @@
+---
+title: "Individual Project"
+---
+
+```{r, echo=FALSE, include=FALSE}
+library(kableExtra)
+library(knitr)
+library(tidyverse)
+```
+
+
+# Learning Objectives
+
+- identify interesting hypotheses to evaluate in your own data
+- gain experience selecting appropriate statistical methods and writing an analysis plan that directly addresses your hypotheses
+- gain experience communicating statistical findings in writing and in an oral presentation
+
+# Case Study Goals
+
+- analyze data and interpret findings of your own study 
+- effectively communicate results of your analysis to your peers using compelling graphical displays and text
+
+
+
+# Data 
+
+Students seeking interesting datasets may wish to consider one or more of the following resources. Students may provide their own data, with the understanding that these data should not have been analyzed previously as part of a course assignment or internship (if you would like to take a prior analysis to the next level, please provide the full prior analysis write-up with your proposal for evaluation).
+
+  - <a href="http://derekogle.com/fishR/packages#packages-of-data">fishR</a> : this is a collection of freshwater fisheries datasets
+  - <a href="https://cornelllabofornithology.github.io/auk/">auk</a>: R packaage for downloading and reading the eBird data (spatio-temporal big data with interesting reporting biases)
+  - <a href="https://www.fisheries.noaa.gov/alaska/commercial-fishing/alaska-groundfish-bottom-trawl-survey-data">Alaska Fish Surveys</a>: Alaska Groundfish Bottom Trawl Survey Data (spatio-temporal data involving changing ocean temperatures and species abundance)
+  - One of many COVID datasets
+    - <a href="https://covidseverity.com/">COVID</a>: County and hospital-level data from Bin Yu's group
+    - <a href="https://github.com/MIDS-at-Duke/duke-social-distancing-survey">Social Distancing</a>: Survey on social distancing in NC
+    - <a href="https://github.com/DukeStatSci/covid19-data">More COVID</a>: Repository from DataFest 2020
+
+
+
+
+# Resources
+
+- Duke Global Health Institute Research Data Analysis Center (RDAC) Statistical Analysis Plan Template (on Sakai): while you should not follow this format, it's helpful to look at the structure and content needed when requesting analysis from a professional statistics core, as it will help you see relevant aspects in describing data and getting information needed to craft an analysis plan.
+- Structure of a Data Analysis Report by Prof. Brian Junker (on Sakai): great guide to the bones of a good project report
+
+# Reports 
+
+- A proposal is due August 26 at 10am EDT. The proposal can be no more than 3 pages (11 point font or larger -- adhere to this requirement throughout) in length. The proposal should mirror the helpful [Sacred Heart Guidelines](https://libguides.usc.edu/writingguide/researchproposal). A two-minute (no more) video should also be uploaded explaining your idea.  Pages past 3 or content past 2 minutes will be treated as ineligible for grading. Note that in later submissions, someone else needs to reproduce your work -- so the data needs to be made available to other students.
+- Submission I of the individual project is due at 10am EDT on September 14.  This part should include your introduction and description of the data, including exploratory data analysis, and can be no more than 4 pages in length. Feedback will be provided by peers and the instructional team. 
+- Submission II of the individual project is due at 10am EDT on October 12. This part should build on submission I, adding the methods section and preliminary results, and can be no more than 6 pages in length. (You are welcome to reallocate space -- that is, I anticipate that you will need more than 2 pages for methods and results.) Reproducible code/data should also be submitted. Feedback will be provided by peers and the instructional team. Students who also submit a comprehensive response to reviews from Submission I along with edits incorporated in the (new) document are eligible to receive up to 50% of the deducted points (excluding points deducted for reproducibility, which will be assessed again at submissions II and III) back from Submission I.
+- Submission III of the individual project is due at 10am EST on November 9. This part should build on prior submissions, adding the final results and discussion, and should be the complete report of  no more than 8 pages. Accompanying this report should be a 5 minute video presentation explaining the project and results, reproducible code, and data. Feedback will be provided by peers and the instructional team. Students who also submit a comprehensive response to reviews from Submission II along with edits incorporated in the (new) document are eligible to receive up to 50% of the deducted points (excluding reproducibility deductions) back from Submission II. 
+- The final submission is due on November 16 and will consist of (1) the final report, and (2) a point-by-point response to the feedback provided by peers and the instructional team, with any edits to the report noted. Based on the point-by-point response and revisions, you are eligible to receive up to 50% of the deducted points (excluding reproducibility deductions) back from Submission III. (NOTE: a three-day grace period, with no late point deduction, will be appied to the final submission. Submissions received November 20 or later will be penalized.)
+
+
+
+
+

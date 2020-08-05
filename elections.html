@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Case Study 3: Election Prediction</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Case Studies</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="policies.html">Policies</a>
+</li>
+<li>
+  <a href="leaders.html">Lifespans of World Leaders</a>
+</li>
+<li>
+  <a href="detectstress.html">Wearables and Health</a>
+</li>
+<li>
+  <a href="elec03.html">Election Prediction</a>
+</li>
+<li>
+  <a href="individual.html">Individual Project</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Case Study 3: Election Prediction</h1>
+
+</div>
+
+
+<div id="learning-objectives" class="section level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>continue developing skills in using models for prediction</li>
+<li>evaluate and update predictions based on dynamic data</li>
+<li>combine data on a variety of levels (national, state, individual) to predict election outcomes</li>
+</ul>
+</div>
+<div id="case-study-goals" class="section level1">
+<h1>Case Study Goals</h1>
+<p>Goals of this case study are (1) to predict whether the US Senate remains in Republican control, and (2) to predict the outcomes of all NC Congressional elections (the 13 federal Representatives to Congress), including characterization of uncertainty in predictions.</p>
+<p>PRESIDENT? ANDY GELMAN NEW STUFF FOR ECONOMIST</p>
+<p>We will present predictions weekly, and the final case study grading criteria will include some determined by the class. In addition, prizes will be given in a number of categories (e.g., most creative useful data source).</p>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<ul>
+<li><a href="decks/data/gay_marriage_megapoll.dta">gay_marriage_megapoll.dta</a></li>
+<li><a href="https://dl.ncsbe.gov/?prefix=data/">NC voter files</a> Note these data are processed on Sakai.</li>
+<li><a href="https://cces.gov.harvard.edu/pages/welcome-cooperative-congressional-election-study">Cooperative Congressional Election Study</a></li>
+<li><a href="https://opportunityinsights.org/data/?geographic_level=0&amp;topic=0&amp;paper_id=0#resource-listing">Opportunity Insights Data Library</a></li>
+<li>See data on Sakai under Resources in the Case Study 3 folder for 2010 Census summary data and 2016 and 2018 voting data in NC</li>
+</ul>
+</div>
+<div id="resources" class="section level1">
+<h1>Resources</h1>
+<ul>
+<li><p><a href="https://www.datacamp.com/community/blog/election-forecasting-polling">Andy Gelman Interview on Election Forecasting</a> (This is a very interesting interview overall. I suggest listening to it all, but the polling/election modeling component starts about 30 minutes into the interview.)</p></li>
+<li><p><a href="https://projects.economist.com/us-2020-forecast/president/how-this-works">Andy Gelman’s Predictive Model for <em>The Economist</em></a></p></li>
+<li><p><a href="https://ballotpedia.org/United_States_House_of_Representatives_elections_in_North_Carolina,_2020">North Carolina Congressional Elections Fall 2020</a></p></li>
+<li><p><a href="https://ballotpedia.org/U.S._House_battlegrounds,_2020">Which districts are viewed as competitive?</a> + <a href="https://www.newsobserver.com/news/politics-government/article216882230.html">Nate Silver says this is going to be easy!</a> + <a href="http://thisisstatistics.org/demystifying-the-election-prediction-2016-contest/">ASA 2016 Election Contest</a> + <a href="https://fivethirtyeight.com/features/registered-voter-polls-will-usually-overrate-democrats/">Why do we care about likely voters?</a> + <a href="https://fivethirtyeight.com/features/a-users-guide-to-fivethirtyeights-2016-general-election-forecast/">FiveThirtyEight’s 2016 forecast details</a></p></li>
+<li><p><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/?ex_cid=rrpromo">FiveThirtyEight’s current forecasts</a> + <a href="https://www.r-statistics.com/2016/08/presidential-election-predictions-2016/">Potentially helpful blog 1</a> + <a href="https://github.com/hardin47/prediction2016/blob/master/predblog.pdf">Potentially helpful blog 2</a> + <a href="https://www.politico.com/magazine/story/2016/12/the-worst-political-predictions-of-2016-214555">Worst 2016 Political Predictions</a> + <a href="https://www-m.cnn.com/2018/10/02/politics/trump-brett-kavanaugh-turning-point-election-educated-white-women-voters/index.html?r=https%3A%2F%2Fwww.cnn.com%2F">Polling trends</a> + <a href="https://www.nytimes.com/2016/10/13/upshot/how-one-19-year-old-illinois-man-is-distorting-national-polling-averages.html">Cool article on sensitivity of polls</a> + <a href="https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/">Google Street View and Voting</a> + <a href="http://www.thedrive.com/news/16712/trump-supporting-towns-more-likely-to-be-filled-with-pickup-trucks-study-claims">Pickup Trucks and Voting</a></p>
+<pre><code>                                                                                                                                                                  # Slides 
+
+
+                                                                                                                                                                  - [Basics of Election Prediction](decks/cs04_1_deck.html)
+                                                                                                                                                                  - [Poststratification and Weighting](decks/cs04_2_deck.html)
+                                                                                                                                                                  - [MRP Tutorial](decks/cs04_3_deck.html)
+
+
+
+                                                                                                                                                      # Reports
+                                                                        - Weekly predictions of the NC Congressional races starting October 12
+                                                                        - Interim report 1: who votes in NC? Using the NC voter files, identify who votes in NC so that these data can be used with election surveys in order to predict outcomes of NC congressional elections. Present results in short in-class presentation and in accompanying report not to exceed 5 pages.  Results should be fully reproducible. 
+                                                                                                                                                                  - Interim report 2: in 5 pages (maximum), outline your models and general strategy for predicting the outcome of the 2018 elections.
+                                                                                                                                                                  - Final report: Items for Final Report
+                                                                                                                                                                  + The final report itself should be structured with an introduction, description of methods (e.g., modeling and prediction strategy along with the models themselves), results (point and interval estimates of the % of votes won by each Congressional candidate, predicting the winner of each race; point and interval estimates of the probability the US House remains under Republican control). Discussion should include some evaluation of the relative predictive ability of variables in your models (e.g., maybe you predicted voter turnout as a function of pet ownership rates, but maybe pet ownership rates are not at all predictive – so we want to know which data sources you felt were most useful) as well as discussion of strengths and weaknesses of your strategy. Any visualizations should be included (or linked, if they are interactive) in the final report. The final report should contain two appendices, described below.
+                                                                                                                                                                  + Appendix A: Numbered list of all models/modeling procedures, with explicit details about model purpose, model structure, and resulting estimates from each model (raw output is fine for this appendix). Reproducible code and data should also be uploaded to Sakai.
+                                                                                                                                                                  + Appendix B: List of all data sets/data sources used, along with an explicit mapping from the models in Appendix A to the variables used from Appendix B in each model.
+
+
+                                                                                                                                                                  - Presentation after election: discuss what went right and wrong with your modeling and assumptions based on election outcomes (e.g., winners, who voted, etc.)
+
+
+
+
+                                                                                                                                                                  # Prizes
+
+                                                                                                                                                                  Prizes may be awarded in the following categories:
+
+                                                                                                                                                                    (1) best prediction (who wins each NC house seat + House control + tiebreak of exact number of seats won by Democrats, Republicans, and others in US House of Representatives + second tiebreak of \% of vote share by winning candidate in NC 9th district)
+                                                                                                                                                                  (2) most creative data source useful for prediction (e.g., Yeti sales, number of nail salons per capita, tweets)
+                                                                                                                                                                  (3) most easily accessibile new data source useful for prediction
+                                                                                                                                                                  (4) best interactive visualization</code></pre></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

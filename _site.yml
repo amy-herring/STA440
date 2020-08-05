@@ -13,7 +13,7 @@ navbar:
   - text: Wearables and Health
     href: detectstress.html
   - text: Election Prediction
-    href: elec03.html
+    href: elections.html
   - text: Individual Project
     href: individual.html
   

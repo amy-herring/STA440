@@ -54,7 +54,7 @@ We will present predictions weekly, and the final case study grading criteria wi
 
 # Assessment
 
-In addition to the usual grade, a best prediction winner will be chosen, with all due honor and glory, based on the following algorithm developed by students in STA 340 (decision analysis).
+In addition to the usual grade, a best prediction winner will be chosen, with all due honor and glory, based on the following algorithm developed by students in STA 340 (decision analysis), shown here for the outcome of the 13 NC congressional races.
 
 For a prediction $p$, truth $\theta$, and confidence interval $CI$ with bounds $p_\min, p_\max$:
 

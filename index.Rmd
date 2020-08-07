@@ -95,7 +95,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | October 23   | | Case Study 3 |
 | October 26    |  |  Case Study 3 Peer Reviews | 
 | October 28   |  |  |
-| October 30   |  |  |
+| October 30   | Lab |  |
 | November 2   |  | Case Study 3 Response and Revision  |
 | November 4   |  | |
 | November 6   |  |  |

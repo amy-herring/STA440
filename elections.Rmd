@@ -16,7 +16,7 @@ library(tidyverse)
 - combine data on a variety of levels (national, state, individual) to predict election outcomes
 
 # Case Study Goals
-Goals of this case study are (1) to predict whether the US Senate remains in Republican control, and (2) to predict the outcomes of all NC Congressional elections (the 13 federal Representatives to Congress), including characterization of uncertainty in predictions.
+Goals of this case study are (1) to predict the probability that the US Senate remains in Republican control, (2) to predict the electoral college vote, and (3) to predict the outcomes of all NC Congressional elections (the 13 federal Representatives to Congress), including characterization of uncertainty in predictions.
 
 We will present predictions weekly, and the final case study grading criteria will include some determined by the class. In addition, prizes will be given in a number of categories (e.g., most creative useful data source).
 
@@ -36,6 +36,7 @@ We will present predictions weekly, and the final case study grading criteria wi
 - [Which districts are viewed as competitive?](https://ballotpedia.org/U.S._House_battlegrounds,_2020)
 - [Why do we care about likely voters?](https://fivethirtyeight.com/features/registered-voter-polls-will-usually-overrate-democrats/)
 - [FiveThirtyEight's election page]( https://fivethirtyeight.com/politics/elections/)
+- [Huffington Post Pollster](https://elections.huffingtonpost.com/pollster)
 - [Google Street View and Voting](https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/)
 - [Pickup Trucks and Voting](http://www.thedrive.com/news/16712/trump-supporting-towns-more-likely-to-be-filled-with-pickup-trucks-study-claims)
 
@@ -47,6 +48,7 @@ We will present predictions weekly, and the final case study grading criteria wi
 # Reports
 
 - Interim report 1: who votes in NC? Using the NC voter files, identify who votes in NC so that these data can be used in conjunction with surveys and other data in order to predict outcomes of NC congressional elections. Present results in short (<5 min) video presentation on October 14.
+- Weekly updates on predictions
 - Final report: Items for Final Report
   - The final report itself should be structured with an introduction, description of methods (e.g., modeling and prediction strategy along with the models themselves), results (point and interval estimates of the % of votes won by each Congressional candidate; point and interval estimates of the probability the US Senate remains under Republican control). Discussion should include some evaluation of the relative predictive ability of variables in your models (e.g., maybe you predicted voter turnout as a function of pet ownership rates, but maybe pet ownership rates are not at all predictive – so we want to know which data sources you felt were most useful) as well as discussion of strengths and weaknesses of your strategy. Any visualizations should be included (or linked, if they are interactive) in the final report. The final report should contain two appendices, described below.
     - Appendix A: Numbered list of all models/modeling procedures, with explicit details about model purpose, model structure, and resulting estimates from each model (raw output is fine for this appendix). Reproducible code and data should also be uploaded to Sakai.

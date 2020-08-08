@@ -66,7 +66,7 @@ Each case study will have a page limit, and under no circumstances should font s
 
 #### Peer review
 
-Students will be asked (on an individual, not group, basis) to provide feedback and comments on the case studies presented by other groups throughout the course. This feedback will be provided to the groups and will also be assessed as part of the course. The ability to provide thoughtful, constructive feedback is critical in the workplace and a valued skill. Peer reviewers will be asked to check reproducibility, and if errors/challenges are round, to double-check reproducibility after the final submission. Peer reviewers will get feedback from the report authors regarding the helpfulness of their reviews.
+Students will be asked (on an individual, not group, basis) to provide feedback and comments on the case studies presented by other groups throughout the course. This feedback will be provided to the groups and will also be assessed as part of the course. The ability to provide thoughtful, constructive feedback is critical in the workplace and a valued skill. Peer reviewers will be asked to check reproducibility, and if errors/challenges are round, to double-check reproducibility after the final submission. Peer reviewers will get feedback from the report authors regarding the helpfulness of their reviews. The elections case study will be a little different, due to a desire to keep confidential a group's prediction model from other groups!
 
 ```{r flowgroup, echo=FALSE}
 mermaid("
@@ -118,7 +118,7 @@ Your final grade will be comprised of the following.
 |Individual project part II      | 10% |
 |Individual project final report (part III) and revision      | 15% |
 
-Each report will be graded based on the initial submission, with the ability to earn additional points based on the revised report.
+Each report will be graded based on the initial submission, with the ability to earn additional points based on the revised report for the individual project and case studies 1-2.
 
 Cumulative numerical averages of 90 - 100 are guaranteed at least an A-, 80 - 89 at least a B-, and 70 - 79 at least a C-; however, the exact ranges for letter grades will be determined at the end of the semester. The grade ranges may need to be shifted to the left, and when appropriate, students will be given guidance on interpreting grades when assignments are returned. The more evidence there is that the class is performing at the highest level, the higher the grade distribution will be. 
 

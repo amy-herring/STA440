@@ -63,42 +63,42 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 
 |Date           |Topic                      |Deliverables     |
 | ----------    | ---------------------------         | --------------- |
-| August 17     | Welcome and Introductions        |     |
-| August 19     | Case Study 0: Discrimination; Interaction; Case Study 1: Lifespan of World Leaders   |    Getting to Know You Videos  |
-| August 21     | Case Study 0 Wrap-Up    |   Popes Individual Assignment     |
-| August 24    |  Lab    |      |
-| August 26  | | Project Proposals |
-| August 28   | Case Study 2: Detecting Stress Using Wearables; Meetings about Project Proposals | Case Study 1 |
-| August 31  |  Lab; Meetings about Project Proposals | Case Study 1 Peer Reviews  |
-| September 2  |   |    |
+| August 17     | Welcome and Introductions; Case Study 1: Lifespan of World Leaders; Survival Analysis        |     |
+| August 19     | Discrimination Project; How to Write a Model; Interaction    |    Getting to Know You Videos  |
+| August 21     | Discrimination Project;     |        |
+| August 24    |  Lab   |  Popes Individual Assignment    |
+| August 26  | |  |
+| August 28   |   | Project Proposals |
+| August 31  |  Lab; Meetings about Project Proposals | Case Study 1  |
+| September 2  |   |  Case Study 1 Peer Reviews  |
 | September 4  | |  |
-| September 7  |  |  Case Study 1 Response and Revision  |
-| September 9  |  |   |
+| September 7  | Lab: Using the Duke Compute Cluster |    |
+| September 9  | Case Study 2: Detecting Stress Using Wearables | Case Study 1 Response and Revision  |
 | September 11  |  |   |
 | September 14  |  | Project Introduction, Data Description, EDA |
 | September 16  |  |  |
 | September 18  |   | Project Peer Reviews |
 | September 21  |       |   |
 | September 23     | |   | 
-| September 25     |  | Case Study 2  |
-| September 28    |  | Case Study 2 Peer Reviews |
-| September 30   |   |  |
+| September 25     |  |  |
+| September 28    |  | Case Study 2  |
+| September 30   |   | Case Study 2 Peer Reviews |
 | October 2   |  | Midsemester grades (my deliverable)  |
-| October 5    | Case Study 3: Election Prediction | Case Study 2 Response and Revision  |
-| October 7    |  |  |
+| October 5    | Case Study 3: Election Prediction |   |
+| October 7    |  | Case Study 2 Response and Revision |
 | October 9    |  |   |
 | October 12    |  | Project Methods and Analysis Plan  | 
 | October 14    |  | Case Study 3: Who Votes in NC? |
 | October 16   |   | Project Peer Reviews  | 
 | October 19    |  |   | 
-| October 21    |  |    |
-| October 23   | | Case Study 3 |
-| October 26    |  |  Case Study 3 Peer Reviews | 
+| October 21    |  | Case Study 3: Analysis Plan   |
+| October 23   | |  |
+| October 26    |  |   | 
 | October 28   |  |  |
 | October 30   | Lab |  |
-| November 2   |  | Case Study 3 Response and Revision  |
+| November 2   |  | Case Study 3  |
 | November 4   |  | |
-| November 6   |  |  |
+| November 6   |  | Case Study 3 Peer Reviews |
 | November 9   |  | Individual Project |
 | November 11   |  | Project Peer Reviews  | 
 | November 13   |  |  |

@@ -40,6 +40,20 @@ We will present predictions weekly, and the final case study grading criteria wi
 - [Google Street View and Voting](https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/)
 - [Pickup Trucks and Voting](http://www.thedrive.com/news/16712/trump-supporting-towns-more-likely-to-be-filled-with-pickup-trucks-study-claims)
 
+# Video Lectures (See Sakai)
+
+[Matrix Formulation of the Linear Model]
+
+[Introduction to Multilevel Modeling]
+
+[Some Light Technical Details About Multilevel Models]
+
+[More Details on the Radon Example]
+
+[Deep Dive into R Code]
+
+
+
 # Slides 
 - [Basics of Election Prediction](decks/cs03_1.html)
 - [Poststratification and Weighting](decks/cs03_2.html)

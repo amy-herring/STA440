@@ -40,7 +40,7 @@ The data include a random sample of 1000 DDS beneficiaries as well as their age,
 
 - Interaction video on Sakai
 
-- Notes on Simpson's paradox
+- [Berkeley Discrimination Case](berkeley.html)
 
 # Tasks
 

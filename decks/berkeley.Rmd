@@ -1,0 +1,128 @@
+---
+title: "Simpson's Paradox"
+output: 
+  revealjs::revealjs_presentation:
+    theme: night
+    highlight: espresso
+    center: true
+    transition: none
+    fig_caption: true
+    reveal_options:
+      progress: true
+      slideNumber: true
+---
+## Case Study: Berkeley Admissions 
+
+In fall 1973, the University of California, Berkeley’s graduate division admitted 44% of male applicants and 35% of female applicants. School administrators were concerned about the potential for bias (and lawsuits!) and asked statistics professor Peter Bickel to examine the data more carefully.
+
+<br>
+
+We have a subset of the admissions data for 6 departments. 
+
+##
+
+```{r loaddata,message=FALSE,warning=FALSE}
+load("~/Documents/GitHub/STA440/2020/decks/data/UCBadmit.RData")
+d=UCBadmit
+library(tidyverse)
+d <-
+  d%>%
+  mutate(male=ifelse(applicant.gender=="male",1,0),
+         dept_id = rep(1:6, each = 2))
+d$successrate=d$admit/d$applications
+sum(d$admit[d$male==1])/sum(d$applications[d$male==1])
+sum(d$admit[d$male==0])/sum(d$applications[d$male==0])
+```
+
+We see in this subset of departments that roughly 45% of male applicants were admitted, while only 30% of female applicants were admitted.
+
+##
+
+Because admissions decisions for graduate school are made on a departmental level (not at the school level), it makes sense to examine results of applications by department.
+
+```{r explore}
+d[,c(1,2,3,4,7)]
+```
+
+Hmm, what's going on here?
+
+##
+
+Following McElreath's analysis in *Statistical Rethinking*, we start fitting a simple logistic regression model and examine diagnostic measures.
+
+The model for department $i$ and gender $j$ with $n_{admit,ij}$ of $n_{ij}$ applicants admitted is given as:
+
+$n_{admit,ij} \sim \text{Binomial}(n_{ij},p_{ij})~~~$
+$\text{logit}(p_{ij})=\alpha+\beta\text{male}_{j}$
+
+##
+
+```{r logreg,cache=TRUE,message=FALSE}
+adm1 <-
+  glm(data = d, family = binomial,
+      cbind(admit,reject) ~ 1 + male )
+summary(adm1)
+```
+
+Here it appears male applicants have $e^{0.61}=1.8$ (95% CI (1.6, 2.1)) times the odds of admission as female applicants.
+
+
+## Model Checking
+
+How do our model's predictions align with observed probabilities?
+
+```{r checkmod}
+male=c(1,0)
+predadm1=c(exp(adm1$coefficients[1]+adm1$coefficients[2])/(1+exp(adm1$coefficients[1]+adm1$coefficients[2])),exp(adm1$coefficients[1])/(1+exp(adm1$coefficients[1]))) #this is so you see how to get the prediction, not the most efficient code
+# more efficient code comes later :)
+predprob=cbind(male,predadm1)
+d1=merge(d,predprob)
+d1[,c(1,2,8,9)]
+
+```
+
+Eew, this model is way off the mark! Certainly there are some large departmental effects, so let's fit a more flexible model.
+
+
+
+## Multiple Logistic Regression
+
+
+
+$n_{admit,ij} \sim \text{Binomial}(n_{ij},p_{ij})~~~$
+$\text{logit}(p_{ij})=\alpha+\beta\text{male}_{j}+\gamma_1I(\text{dept}_i=B)+\gamma_2I(\text{dept}_i=C)$
+$+\gamma_3I(\text{dept}_i=D)+\gamma_4I(\text{dept}_i=E)+\gamma_5I(\text{dept}_i=F)$
+
+##
+
+```{r admadj,eval=TRUE, message=FALSE}
+adm2 <-
+  glm(data = d, family = binomial,
+      cbind(admit,reject) ~ 1 + male + dept)
+summary(adm2)
+```
+
+Note the gender term no longer reaches statistical significance
+
+## Model Checking
+
+```{r check2}
+predlogit=predict(adm2,data=d)
+predprob=exp(predlogit)/(1+exp(predlogit))
+d2=cbind(d,predprob)
+d2[,c(1,2,8,9)]
+```
+
+This model provides a much closer fit to the data.
+
+## What Happened?
+
+```{r redux}
+d[,c(1,2,8)]
+```
+
+In the raw data, women had higher acceptance probabilities than men in 4 of the 6 departments. However, the departments to which they applied in higher numbers were the departments that had lower overall acceptance rates. 
+
+## What Happened?
+
+What happened is that women were more likely to apply do departments like English, which have financial trouble supporting grad students, and they were less likely to apply to STEM departments, which had more plentiful funding for graduate students. The men, on the other hand, were much more likely to apply to the STEM departments that had higher acceptance rates.

@@ -40,7 +40,7 @@ The data include a random sample of 1000 DDS beneficiaries as well as their age,
 
 - Interaction video on Sakai
 
-- [Berkeley Discrimination Case](berkeley.html)
+- [Berkeley Discrimination Case](decks/berkeley.html)
 
 # Tasks
 

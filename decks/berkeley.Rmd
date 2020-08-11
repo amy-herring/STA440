@@ -125,4 +125,4 @@ In the raw data, women had higher acceptance probabilities than men in 4 of the 
 
 ## What Happened?
 
-What happened is that women were more likely to apply do departments like English, which have financial trouble supporting grad students, and they were less likely to apply to STEM departments, which had more plentiful funding for graduate students. The men, on the other hand, were much more likely to apply to the STEM departments that had higher acceptance rates.
+What happened is that women were more likely to apply to departments like English, which have financial trouble supporting grad students, and they were less likely to apply to STEM departments, which had more plentiful funding for graduate students. The men, on the other hand, were much more likely to apply to the STEM departments that had higher acceptance rates.

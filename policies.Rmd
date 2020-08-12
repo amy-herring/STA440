@@ -68,7 +68,9 @@ Each case study will have a page limit, and under no circumstances should font s
 
 Students will be asked (on an individual, not group, basis) to provide feedback and comments on the case studies presented by other groups throughout the course. This feedback will be provided to the groups and will also be assessed as part of the course. The ability to provide thoughtful, constructive feedback is critical in the workplace and a valued skill. Peer reviewers will be asked to check reproducibility, and if errors/challenges are round, to double-check reproducibility after the final submission. Peer reviewers will get feedback from the report authors regarding the helpfulness of their reviews. The elections case study will be a little different, due to a desire to keep confidential a group's prediction model from other groups!
 
-```{r flowgroup, echo=FALSE}
+![](images/flowchart.png){width=10in} 
+
+```{r flowgroup, echo=FALSE, eval=FALSE}
 mermaid("
 gantt
         dateFormat  YYYY-MM-DD

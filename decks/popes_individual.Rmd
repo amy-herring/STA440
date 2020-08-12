@@ -1,0 +1,54 @@
+---
+title: "Stander et al Evaluation Rubric"
+---
+
+Please provide thoughtful and honest feedback on the Stander et al paper.  The purpose of peer review exercises is not only to prepare you to conduct peer review in future jobs but also to enhance critical thinking, which should improve your own work. In addition, your thoughts and suggestions will benefit other teams (as we review case studies moving forward), pulling up the level of work of the entire class.
+
+Please use as much space as needed to answer the questions. Thanks for your input!
+
+
+1. Name and e-mail: 
+
+2. Does the paper clearly articulate the authors’ research goals? (Select one)
+
+      Yes	         	Somewhat 	         	No
+      
+	(If somewhat or no is chosen, please address any issues.)
+
+3.	Do the analyses match the research question(s) and available data? If not, point out problem areas.
+
+4. Are the methods described in enough detail that the work could be replicated by someone else? Is it clear what approach and model were used to evaluate hypotheses of interest?  If not, point out problem areas.
+
+5. Does the paper contain a correct and effective interpretation of the results provided? Is all information needed to substantiate the results and conclusions (e.g., posterior probabilities, confidence intervals) included?  If not, point out problem areas.  
+
+6. Are any tables and figures clear, effective, and informative?  Should any be eliminated, or are any new tables or figures needed?
+
+7. Is the model appropriately validated?  What type of diagnostic methods were used to check any modeling assumptions, and are you satisfied the assumptions of the model are valid? If the model is not validated (e.g., because of lack of data), are there compelling reasons this cannot be done?  Has any sensitivity analysis been done, and are the results reasonable?  Should any additional sensitivity analyses been conducted? 
+
+8. Is the analysis easily reproduced based on the code (R file) and data provided?
+
+    + How long did it take you to reproduce this work, from start to finish (including downloading files, opening R etc)?
+        + <15 minutes
+        + 15-30 minutes
+        + 30-60 minutes
+        + 1-2 hours
+        + Over 2 hours but $< \infty$
+        + Failed to reproduce work
+  
+  
+    + What challenges to reproducibility did you face?
+    
+    + Comment on the reproducibility of the R file provided by the authors (not included online with the manuscript) versus the reproducibility of the code published with the paper as Appendix A. What challenges might you have faced trying to reproduce the results based solely on the information provided in the Appendix?
+
+    + Update the popes data to reflect Pope Francis’s current time in office, and update the censoring date for Pope Francis and Pope Benedict XVI to be the due date of this assignment. Then provide here an updated version of Figure 4 reflecting these changes.
+
+9. Is the paper professionally presented and generally free of distracting errors or other issues, including (but not limited to) insufficient organization or formatting; poor grammar, spelling, or punctuation; or too-small font? Note any concerns here.
+
+10. What are the strengths and limitations of the analysis and data?  Are they clearly acknowledged and presented in the manuscript?
+
+
+
+11.	What questions do you have for the authors?
+
+
+

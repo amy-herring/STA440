@@ -41,9 +41,9 @@ Note: office hours may vary due to travel and other commitments. Revisions to of
 
 | Team member | Office hours | Location |
 | ----------  | -------------------------------------         | ---- |
-| [Professor Amy Herring](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:amy.herring@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | TBD | Zoom |
- [TA David Buch](https://davidbuch.github.io)  <a href="mailto:david.buch@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | TBD | Zoom |
- [TA Graham Tierney](https://g-tierney.github.io)  <a href="mailto:graham.tierney@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | TBD | Zoom |
+| [Professor Amy Herring](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:amy.herring@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | TBD | Zoom (see Sakai for link) |
+ [TA David Buch](https://davidbuch.github.io)  <a href="mailto:david.buch@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Wednesdays 8-9pm Eastern Time | Zoom (see Sakai for link) |
+ [TA Graham Tierney](https://g-tierney.github.io)  <a href="mailto:graham.tierney@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | TBD | Zoom (see Sakai for link) |
  
                   
 
@@ -90,7 +90,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | October 12    |  | Project Methods and Analysis Plan  | 
 | October 14    |  | Case Study 3: Who Votes in NC? |
 | October 16   |   | Project Peer Reviews  | 
-| October 19    |  |   | 
+| October 19    |  | Case Study 3: Who Votes? Peer Reviews  | 
 | October 21    |  | Case Study 3: Analysis Plan   |
 | October 23   | |  |
 | October 26    |  |   | 
@@ -98,7 +98,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | October 30   | Lab |  |
 | November 2   |  | Case Study 3  |
 | November 4   |  | |
-| November 6   |  | Case Study 3 Peer Reviews |
+| November 6   |  |  |
 | November 9   |  | Individual Project |
 | November 11   |  | Project Peer Reviews  | 
 | November 13   |  |  |

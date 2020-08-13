@@ -41,9 +41,9 @@ Note: office hours may vary due to travel and other commitments. Revisions to of
 
 | Team member | Office hours | Location |
 | ----------  | -------------------------------------         | ---- |
-| [Professor Amy Herring](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:amy.herring@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | TBD | Zoom (see Sakai for link) |
+| [Professor Amy Herring](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:amy.herring@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Fridays 2-3pm Eastern Time | Zoom (see Sakai for link) |
  [TA David Buch](https://davidbuch.github.io)  <a href="mailto:david.buch@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Wednesdays 8-9pm Eastern Time | Zoom (see Sakai for link) |
- [TA Graham Tierney](https://g-tierney.github.io)  <a href="mailto:graham.tierney@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | TBD | Zoom (see Sakai for link) |
+ [TA Graham Tierney](https://g-tierney.github.io)  <a href="mailto:graham.tierney@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | Mondays 12-1pm Eastern Time | Zoom (see Sakai for link) |
  
                   
 
@@ -65,8 +65,8 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | ----------    | ---------------------------         | --------------- |
 | August 17     | Welcome and Introductions; Case Study 1: Lifespan of World Leaders; Survival Analysis        |     |
 | August 19     | Discrimination Project; How to Write a Model; Interaction    |    Getting to Know You Videos  |
-| August 21     | Discrimination Project;     |        |
-| August 24    |  Lab   |  Popes Individual Assignment    |
+| August 21     | Structure of a Data Analysis Report; Individual Project Q&A     |        |
+| August 24    |  Lab: MCMC   |  Popes Individual Assignment    |
 | August 26  | |  |
 | August 28   |   | Project Proposals |
 | August 31  |  Lab; Meetings about Project Proposals | Case Study 1  |

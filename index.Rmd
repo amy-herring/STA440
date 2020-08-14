@@ -57,7 +57,7 @@ You should have access to a laptop and bring it to every class, fully charged. T
 
 STA 440 contains a mixture of short lecture, lab, and work sessions at the usual class and lab times. Frequent mini-assignments will be provided in class and lab to check mastery and identify areas for additional focus.
 
-Note: this schedule is approximate and is likely to be modified as the course progresses. Some lab sessions will be swapped with lectures due to course timing. Assignments are due at 10am ET unless otherwise specified. 
+Note: this schedule is approximate and is likely to be modified as the course progresses. Lab sessions will be swapped with lectures due to course timing as needed. All course and lab sessions (10:15-11:30am MWF) will be recorded. Assignments are due at 10am ET unless otherwise specified. 
 
 
 
@@ -65,17 +65,17 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | ----------    | ---------------------------         | --------------- |
 | August 17     | Welcome and Introductions; Case Study 1: Lifespan of World Leaders; Survival Analysis        |     |
 | August 19     | Discrimination Project; How to Write a Model; Interaction    |    Getting to Know You Videos  |
-| August 21     | Structure of a Data Analysis Report; Writing about Data; Individual Project Q&A     |        |
+| August 21     |  Survival Analysis; Individual Project Q&A     |        |
 | August 24    |  Lab: MCMC  |  Popes Individual Assignment    |
-| August 26  | Survival Analysis |  |
+| August 26  | Structure of a Data Analysis Report; Writing about Data |  |
 | August 28   | Work Day: Case Study 1 | Project Proposals |
-| August 31  |  Lab; Meetings about Project Proposals | Case Study 1  |
-| September 2  |   |  Case Study 1 Peer Reviews  |
+| August 31  |  Lab: Text Editors; Logging in to the Duke Compute Cluster; Meetings about Project Proposals | Case Study 1  |
+| September 2  | Meetings about Project Proposals  |  Case Study 1 Peer Reviews  |
 | September 4  | |  |
-| September 7  | Lab: Using the Duke Compute Cluster |    |
+| September 7  | Lab: Running Jobs on the Duke Compute Cluster |    |
 | September 9  | Case Study 2: Detecting Stress Using Wearables | Case Study 1 Response and Revision  |
 | September 11  |  |   |
-| September 14  |  | Project Introduction, Data Description, EDA |
+| September 14  | Lab: Handling Big Data | Project Introduction, Data Description, EDA |
 | September 16  |  |  |
 | September 18  |   | Project Peer Reviews |
 | September 21  |       |   |

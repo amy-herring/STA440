@@ -1,0 +1,345 @@
+---
+title: "Survival Analysis"
+output: 
+  revealjs::revealjs_presentation:
+    theme: night
+    highlight: espresso
+    center: true
+    transition: none
+    fig_caption: true
+    reveal_options:
+      progress: true
+      slideNumber: true
+---
+## Survival Data
+
+In many studies, the outcome of interest is the time from an initial observation until the occurrence of some event of interest, e.g.
+
+- Time from transplant surgery until new organ failure
+
+- Time to death in a pancreatic cancer trial
+
+- Time to first sex
+
+- Time to menopause
+
+- Time to divorce
+
+- Time to receipt of bachelor's degree
+
+Typically, the event of interest is called a *failure* (even if it is a good thing).   The time interval between a starting point and the failure is known as the *survival time* and is often represented by $t$.
+
+## Survival Data
+
+Certain aspects of survival data make data analysis particularly challenging. 
+
+- Typically, not all the individuals are observed until their times of failure
+    - An organ transplant recipient may die in an automobile accident before the new organ fails
+    - A student may withdraw from the program to start a multi-billion dollar health company
+    - Not everyone gets divorced
+    - A pancreatic cancer patient may move to Aitutaki instead of undergoing further treatment
+- In this case, an observation is said to be *censored* at the last point of contact with the patient.
+
+## Survival
+
+![](images/aitutaki.jpg)
+
+I hope you do visit Aitutaki some day! The Cook Islands are really nice.
+
+## Study Time and Patient Time
+
+![](images/studytime.png){width=4in}
+
+
+It is important to distinguish between study time and patient time.
+
+- A study may start enrolling patients in September and continue until all 500 patients have been enrolled
+- This is likely to take months or years
+- Time is typically converted to patient time (time between enrollment and failure or censoring) before analysis
+- In the world leaders data, patient time is the time from birth to death; study time can be represented by year of birth and year of death
+
+## Survival Function
+
+The distribution of survival times is characterized by the *survival function*, represented by $S(t)$.  For a continuous random variable $T$, $S(t)=Pr(T>t),$ and $S(t)$ represents the proportion of individuals who have not yet failed.  
+
+
+The graph of $S(t)$ versus $t$ is called a survival curve.  The survival curve shows the proportion of survivors at any given time.
+
+## Vaccination in Burkina Faso, 2004 *BMJ*
+
+![Survival of Children by Vaccination Status](images/burkinafaso.png)
+
+## Estimating Survival Curves
+
+Consider a small study with 10 patients.
+
+|Patient           |Event Time                     |Event Type     |
+| --------   | ---------------------------         | --------------- |
+| 1    | 4.5 | Death |
+| 2    | 7.5 | Death |
+| 3    | 8.5 | Censored|
+| 4    | 11.5 | Death |
+| 5    | 13.5 | Censored |
+| 6    | 15.5 | Death |
+| 7    | 16.5 | Death |
+| 8    | 17.5 | Censored |
+| 9    | 19.5 | Death |
+| 10    | 21.5 | Censored |
+
+How do we estimate the survival curve for these data?
+
+## Kaplan-Meier Estimate
+
+Perhaps the most popular estimate of a survival curve is the *Kaplan-Meier* or *product-limit* estimate.  This method is actually fairly intuitive.
+
+- $I_t$:  # at risk of failure at time $t$ (i.e., those who did not fail before $t$ and those who were not censored before $t$)
+- $d_t$:  # who fail at time $t$
+- $q_t=\frac{d_t}{I_t}$:  estimated probability of failing at time $t$
+- $S(t)$:  cumulative probability of surviving beyond time $t$, estimated as 
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+## How is this Intuitive?
+
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+At each time $t$, the probability of surviving is just $1-Pr(failing)$.  Before there are any failures in the data, our estimated $\hat{S}(t)=1$.  At the time of the first failure, this probability falls below 1 and is simply one minus the probability of failing at that time, or $1-\frac{\# ~ failures}{\#~at ~ risk~ of~ failing}$.
+
+
+
+After the first failure, things get more complicated.  At the time of the second failure, you can calcuate $1-\frac{\# ~ failures}{\# ~ at ~risk ~  of ~ failing}$, but this doesn't provide the whole picture, as someone else has already died.  In fact, this is the conditional probability of surviving now that you've made it past the time of the first failure.  
+
+## How is this Intuitive?
+
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+How do you then calculate the total (unconditional) probability of survival?  That is just the product of the probability of surviving past the first failure times the conditional probability of surviving beyond the second failure given that you made it past the first, or ...
+
+## 
+
+$Pr(\text{survive past first and second times})$
+$=Pr(\text{survive past 1st time}) \times$ $Pr(\text{survive past 2nd time}\mid\text{survived past 1st time})$
+$=\left(1-\frac{\# ~ failures ~at ~failure~ time~ 1}{\# ~at~ risk ~of ~failing ~at ~failure ~time ~1}\right)\left(1-\frac{\# ~of ~ failures ~ at ~ failure ~ time~  2}{\# ~ at ~ risk ~ of ~ failing ~ at ~ failure~  time~ 2}\right)$
+
+
+If someone is censored, they are no longer at risk of failing at the next failure time and are taken out of the calculation
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | | |
+| 4.5 | 1 | 0 | | | 
+| 7.5 | 1 | 0 | | |
+| 8.5 | 0 | 1 | | |
+| 11.5 | 1 | 0 | | |
+| 13.5 | 0 | 1 | | |
+| 15.5 | 1 | 0 | | |
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | | | 
+| 7.5 | 1 | 0 | | |
+| 8.5 | 0 | 1 | | |
+| 11.5 | 1 | 0 | | |
+| 13.5 | 0 | 1 | | |
+| 15.5 | 1 | 0 | | |
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 1-$\frac{1}{10}$=0.9 | 
+| 7.5 | 1 | 0 | | |
+| 8.5 | 0 | 1 | | |
+| 11.5 | 1 | 0 | | |
+| 13.5 | 0 | 1 | | |
+| 15.5 | 1 | 0 | | |
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.9$\times (1-\frac{1}{9})$=0.8 |
+| 8.5 | 0 | 1 | | |
+| 11.5 | 1 | 0 | | |
+| 13.5 | 0 | 1 | | |
+| 15.5 | 1 | 0 | | |
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8$\times (1-\frac{0}{8})$=0.8 |
+| 11.5 | 1 | 0 | | |
+| 13.5 | 0 | 1 | | |
+| 15.5 | 1 | 0 | | |
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8 |
+| 11.5 | 1 | 0 | 6 | 0.8$\times (1-\frac{1}{7})$=0.69 |
+| 13.5 | 0 | 1 | | |
+| 15.5 | 1 | 0 | | |
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8 |
+| 11.5 | 1 | 0 | 6 | 0.69 |
+| 13.5 | 0 | 1 | 5 | 0.69 |
+| 15.5 | 1 | 0 | | |
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8 |
+| 11.5 | 1 | 0 | 6 | 0.69 |
+| 13.5 | 0 | 1 | 5 | 0.69 |
+| 15.5 | 1 | 0 | 4 | 0.69$\times (1-\frac{1}{5})$= 0.552|
+| 16.5 | 1 | 0 | | |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8 |
+| 11.5 | 1 | 0 | 6 | 0.69 |
+| 13.5 | 0 | 1 | 5 | 0.69 |
+| 15.5 | 1 | 0 | 4 | 0.552|
+| 16.5 | 1 | 0 | 3 | 0.552$\times (1-\frac{1}{4})$= 0.414 |
+| 17.5 | 0 | 1 | | |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8 |
+| 11.5 | 1 | 0 | 6 | 0.69 |
+| 13.5 | 0 | 1 | 5 | 0.69 |
+| 15.5 | 1 | 0 | 4 | 0.552|
+| 16.5 | 1 | 0 | 3 | 0.414 |
+| 17.5 | 0 | 1 | 2 | 0.414 |
+| 19.5 | 1 | 0 | | |
+| 21.5 | 0 | 1 | | |
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8 |
+| 11.5 | 1 | 0 | 6 | 0.69 |
+| 13.5 | 0 | 1 | 5 | 0.69 |
+| 15.5 | 1 | 0 | 4 | 0.552|
+| 16.5 | 1 | 0 | 3 | 0.414 |
+| 17.5 | 0 | 1 | 2 | 0.414 |
+| 19.5 | 1 | 0 | 1 | 0.414$\times (1-\frac{1}{2})$=0.207 |
+| 21.5 | 0 | 1 | | |
+
+
+## Kaplan-Meier (KM) Estimate
+$\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
+
+|$t$ | # Failed ($d_t$) | # Censored | # Left ($I_{t+1}$) | $\hat{S}(t)$ |
+| --------   | -----------  | ------- | --------- | ------------- |
+| 0.0 | 0 | 0 | 10 | 1 |
+| 4.5 | 1 | 0 | 9 | 0.9 | 
+| 7.5 | 1 | 0 | 8 | 0.8 |
+| 8.5 | 0 | 1 | 7 | 0.8 |
+| 11.5 | 1 | 0 | 6 | 0.69 |
+| 13.5 | 0 | 1 | 5 | 0.69 |
+| 15.5 | 1 | 0 | 4 | 0.552|
+| 16.5 | 1 | 0 | 3 | 0.414 |
+| 17.5 | 0 | 1 | 2 | 0.414 |
+| 19.5 | 1 | 0 | 1 | 0.207 |
+| 21.5 | 0 | 1 | 0  | 0.207 |
+
+What would $\hat{S}(21.5)$ be if the last observation were a failure instead of censored?
+
+## Kaplan-Meier Estimate
+
+In between failure times, the KM estimate does not change but is constant.  This gives the estimated survival function its step-like appearance (we call this type of function a *step function*). If we have a very large data set, the KM estimate may look smooth if the steps are very small.
+
+
+
+
+
+
+
+

@@ -65,6 +65,8 @@ The distribution of survival times is characterized by the *survival function*, 
 
 The graph of $S(t)$ versus $t$ is called a survival curve.  The survival curve shows the proportion of survivors at any given time.
 
+Note: sometimes the survival function is defined as $S(t)=Pr(T \geq t)$.
+
 ## Vaccination in Burkina Faso, 2004 *BMJ*
 
 ![Survival of Children by Vaccination Status](images/burkinafaso.png)
@@ -337,9 +339,120 @@ What would $\hat{S}(21.5)$ be if the last observation were a failure instead of 
 In between failure times, the KM estimate does not change but is constant.  This gives the estimated survival function its step-like appearance (we call this type of function a *step function*). If we have a very large data set, the KM estimate may look smooth if the steps are very small.
 
 
+## General Formulation
 
 
+The primary object of inferential interest is generally the survival function, $S(t)=Pr(T>t)$. 
+
+The cumulative distribution function F is defined as the complement of the survival function: $F(t)=Pr(T \leq t)$. Then if F is differentiable, its derivative is the density function $f(t)$.  
+
+The *hazard function*, often represented using  $\lambda(t)$, is the event rate at time $t$ conditional on survival to time $t$ (or later). It is defined as $\lambda(t)=\underset{dt \rightarrow 0}{\text{lim}} \frac{Pr(t \leq T < t+dt)}{dt \cdot S(t)}=\frac{f(t)}{S(t)}$.  
+
+## Parametric Survival Models: Exponential and Weibull
+
+The shape and characteristics of the hazard and survival functions depend on the assumed probability distribution for the survival times.
+
+Recall the exponential distribution, $f(t)=\lambda e^{-\lambda t}$, for $\lambda, t>0$, which has mean $\frac{1}{\lambda}$ and variance $\frac{1}{\lambda^2}$. The exponential survivor function $S(t)=Pr(T>t)=\int_t^\infty \lambda e^{-\lambda t} dt=\frac{-\lambda e^{-\lambda t}}{\lambda}|_t^\infty=e^{-\lambda t}$, and so the exponential hazard $h(t)$ (to avoid confusing notation here) is given by $h(t)=\frac{f(t)}{S(t)}=\lambda \frac{e^{-\lambda t}}{e^{-\lambda t}}=\lambda$.   The parameter $\lambda$ is often called a scale parameter.
+
+## Exponential Distribution
+
+So under the exponential model, the hazard of the event of interest does not change with time.  Let's generate some data and look at the exponential pdf.
+
+```{r exp, echo=FALSE, out.width='70%'}
+# thanks to dkmathstats
+library(ggplot2)
+x_lower=0; x_upper=10; 
+max_height2 <- max(dexp(x_lower:x_upper, rate = 1, log = FALSE), 
+                    dexp(x_lower:x_upper, rate = 0.1, log = FALSE),
+                    dexp(x_lower:x_upper, rate = 0.01, log = FALSE))
+ggplot(data.frame(x = c(x_lower, x_upper)), aes(x = x)) + xlim(x_lower, x_upper) + 
+     ylim(0, max_height2) +
+     stat_function(fun = dexp, args = list(rate = 1), aes(colour = "1")) + 
+     stat_function(fun = dexp, args = list(rate = 0.1), aes(colour = "0.1")) + 
+     stat_function(fun = dexp, args = list(rate = 0.01), aes(colour = "0.01")) + 
+     scale_color_manual("lambda", values = c("blue", "green", "red")) +
+     labs(x = "\n x", y = "f(x) \n", 
+        title = "Exponential Distribution Density Plots \n") + 
+     theme(plot.title = element_text(hjust = 0.5), 
+         axis.title.x = element_text(face="bold", colour="blue", size = 12),
+         axis.title.y = element_text(face="bold", colour="blue", size = 12),
+         legend.title = element_text(face="bold", size = 10),
+         legend.position = "right")
+
+```
+
+## Exponential Hazard
+
+Here's the exponential hazard for the same values of $\lambda$.
+
+```{r exphaz, echo=FALSE,out.width='70%'}
+ggplot(data.frame(x = c(x_lower, x_upper)), aes(x = x)) + xlim(x_lower, x_upper) + 
+     ylim(0, max_height2) +
+     geom_hline(aes(yintercept=1, linetype="1"),colour="red") +
+     geom_hline(aes(yintercept=0.1,linetype="0.1"),colour="green") +
+     geom_hline(aes(yintercept=0.01,linetype="0.01"),colour="blue") +
+     labs(x = "\n x", y = "h(x) \n", 
+        title = "Exponential Distribution Hazard Plots \n") + 
+     theme(plot.title = element_text(hjust = 0.5), 
+         axis.title.x = element_text(face="bold", colour="blue", size = 12),
+         axis.title.y = element_text(face="bold", colour="blue", size = 12),
+         legend.title = element_text(face="bold", size = 10)) +
+     scale_linetype_manual(name="lambda",values=c(1,1,1),guide=guide_legend(override.aes=list(colour=c("blue","green","red"))))
+```
 
 
+## Weibull Distribution
+
+The Weibull distribution is a generalization of the exponential distribution that allows greater flexibility in the distribution of survival times via inclusion of the shape parameter $\alpha$.
+
+The Weibull can be written $f(t)=\alpha \lambda t^{\alpha-1} e^{-\lambda t^\alpha}$, for $\lambda, \alpha, t>0$, which reduces to the exponential distribution when $\alpha=1$. Its survivor function is $S(t)=e^{-\lambda t^\alpha}$ and hazard function is $\alpha \lambda t^{\alpha-1}$.
+
+## Weibull Distribution
+
+```{r weib, echo=FALSE,out.width="70%"}
+x_lower_wei <- 0
+x_upper_wei <- 3
+
+ggplot(data.frame(x = c(x_lower_wei , x_upper_wei)), aes(x = x)) + 
+  xlim(c(x_lower_wei , x_upper_wei)) + 
+  stat_function(fun = dweibull, args = list(shape = 2, scale = 1), aes(colour = "2 & 1")) + 
+  stat_function(fun = dweibull, args = list(shape = 3, scale = 1), aes(colour = "3 & 1")) + 
+  stat_function(fun = dweibull, args = list(shape = 0.5, scale = 1), aes(colour = "0.5 & 1")) + 
+  scale_color_manual("alpha & lambda", values = c("blue", "green", "red")) +
+  labs(x = "\n x", y = "f(x) \n", 
+       title = "Weibull Distribution Plots") + 
+  theme(plot.title = element_text(hjust = 0.5), 
+        axis.title.x = element_text(face="bold", colour="blue", size = 12),
+        axis.title.y = element_text(face="bold", colour="blue", size = 12),
+        legend.title = element_text(face="bold", size = 10),
+        legend.position = "right")
+
+```
+
+## Weibull Hazards
+
+```{r weibhaz, echo=FALSE,out.width="60%"}
+x=seq(0.01,2,by=0.001)
+weibhaz=data.frame(x=c(x,x,x),haz=c(2*x,3*x^2,1/(2*sqrt(x))),alpha=c(rep("2",length(x)),rep("3",length(x)),rep("0.5",length(x))))
+ggplot(weibhaz,aes(x=x,y=haz))+
+  geom_line(aes(color=alpha,linetype=alpha)) +
+  scale_color_manual(values=c("blue","green","red"))
+```
+
+For the Weibull distribution, the hazard is increasing for $\alpha>1$, decreasing for $0<\alpha<1$, and constant (exponential) for $\alpha=1$. What type of hazard makes sense for studying lifetimes of leaders?
+
+## Other Hazards
+
+In some applications, monotone hazard functions may not be realistic. In reliability engineering, you often have a bathtub-shaped hazard, with a decreasing rate of early failures, a constant failure rate during the main lifetime of the product, and an increasing failure rate as the product begins to wear out.
+
+Perhaps the most popular survival model in public health and medicine is the Cox (1972) proportional hazards model, which is a semi-parametric model that makes no assumption about the shape of the baseline hazard function.
+
+## Proportional Hazards Models
+
+Under a proportional hazards model, the hazard of death at time $t$ for individual $i$ is given by $h_i(t)=h_0(t)e^{\beta_1 x_{i1}+\beta_2 x_{i2} + \cdots + \beta_px_{ip}}$.  We call $h_0(t)$ the baseline hazard. In a Weibull model, we assume that $h_0(t)=\lambda \alpha t^{\alpha-1}$, and in an exponential model, we assume $h_0(t)=\lambda$.
+
+Consider a simple model with one binary covariate $x$ that takes value 1 for one group and 0 for the other. Then the hazard at time $t$ for those in group 1 is $h_0(t)e^\beta$, and the hazard at time $t$ for those in group 0 is $h_0(t)$. Because the hazard in group 1 is proportional to the hazard in group 0, this type of model is called a *proportional hazards* model. 
+
+$e^\beta$ is called the hazard ratio. When $\beta>0$, the hazard ratio$>1$, and we expect those in group 1 to fail more quickly. When $\beta<0$, the hazard ratio$<1$, and we expect those in group 1 to be protected against failure.
 
 

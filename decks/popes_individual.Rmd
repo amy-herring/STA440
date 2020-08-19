@@ -40,7 +40,7 @@ Please use as much space as needed to answer the questions. Thanks for your inpu
     
     + Comment on the reproducibility of the R file provided by the authors (not included online with the manuscript) versus the reproducibility of the code published with the paper as Appendix A. What challenges might you have faced trying to reproduce the results based solely on the information provided in the Appendix?
 
-    + Update the popes data to reflect Pope Francis’s current time in office, and update the censoring date for Pope Francis and Pope Benedict XVI to be the due date of this assignment. Then provide here an updated version of Figure 4 reflecting these changes.
+    + Update the popes data to reflect Pope Francis’s current time in office, and update the censoring date for Pope Francis and Pope Benedict XVI to be the due date of this assignment (8/24/2020). Then provide here an updated version of Figure 4 reflecting these changes.
 
 9. Is the paper professionally presented and generally free of distracting errors or other issues, including (but not limited to) insufficient organization or formatting; poor grammar, spelling, or punctuation; or too-small font? Note any concerns here.
 

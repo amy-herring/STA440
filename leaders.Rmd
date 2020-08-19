@@ -41,7 +41,7 @@ library(tidyverse)
 
 # Assignments and Reports
 
-- Formal evaluation of Popes paper (Individual assignment due 8/24). Each student will reproduce the analysis in the paper (using either method), update Figure 4 using current data on the two living popes, and provide a peer review of the manuscript. Please use the .Rmd file on Sakai [peek at file format](decks/popes_individual.html) to upload your code and evaluation.
+- Formal evaluation of Popes paper (Individual assignment due 8/24). Each student will reproduce the analysis in the paper (using either method), update Figure 4 using current data on the two living popes (the censoring date you use should be 8/24/2020), and provide a peer review of the manuscript. Please use the .Rmd file on Sakai [peek at file format](decks/popes_individual.html) to upload your code and evaluation.
 
 - Report, reproducible code, and video (Group assignment due 8/28: produce a 8 page (maximum) report using R markdown that clearly addresses the case study goals and questions of interest. This report should follow the format of a standard scientific report and should include sections for the introduction, methods, results, and discussion. The methods section should clearly identify the approach to model selection and evaluation, and the results section should clearly specify the final model selected and provide some evaluation of the appropriateness of the model used. Code should be fully reproducible. The maximum duration of the video is 5 minutes.
 

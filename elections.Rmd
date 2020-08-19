@@ -30,6 +30,7 @@ We will present predictions weekly, and the final case study grading criteria wi
 
 # Resources
 
+- [BBC's Simple Guide to the US Election](https://www.bbc.com/news/election-us-2020-53785985)
 - [Andy Gelman Interview on Election Forecasting](https://www.datacamp.com/community/blog/election-forecasting-polling) (This is a very interesting interview overall. I suggest listening to it all, but the polling/election modeling component starts about 30 minutes into the interview.)
 - [Andy Gelman's Predictive Model for *The Economist*](https://projects.economist.com/us-2020-forecast/president/how-this-works)
 - [North Carolina Congressional Elections Fall 2020](https://ballotpedia.org/United_States_House_of_Representatives_elections_in_North_Carolina,_2020)

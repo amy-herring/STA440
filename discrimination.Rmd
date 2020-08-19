@@ -26,9 +26,9 @@ Most US states provide services to support individuals with developmental disabi
 
 # Data
 
-The data include a random sample of 1000 DDS beneficiaries as well as their age, gender, annual expenditures, gender, and race/ethnicity. Details on these variables are provided below.
+The data include a random sample of 1000 DDS beneficiaries as well as their age, gender, annual expenditures, and race/ethnicity. Details on these variables are provided below.
 
-- Age: Age itself is provided as well as a binned variable for age cohort, the latter of which is basedon typical financial needs. The 0-5 years cohort typically has fewer needs and requires less funding, while services are often provided by schools (not the DDS) for children in the 6-12 years and 13-17 years cohort. Individuals in the 18-21 cohort are often in a phase of transition from their parents' homes to group homes or independent living. People in the age 22-50 cohort are typically not living at home but may receive financial support from their family, while people in the 51+ cohort have the most needs and often require the greatest amount of funding because their parents are often no longer living or no longer able to provide financial support.
+- Age: Age itself is provided as well as a binned variable for age cohort, the latter of which is based on typical financial needs. The 0-5 years cohort typically has fewer needs and requires less funding, while services are often provided by schools (not the DDS) for children in the 6-12 years and 13-17 years cohort. Individuals in the 18-21 cohort are often in a phase of transition from their parents' homes to group homes or independent living. People in the age 22-50 cohort are typically not living at home but may receive financial support from their family, while people in the 51+ cohort have the most needs and often require the greatest amount of funding because their parents are often no longer living or no longer able to provide financial support.
 
 - Gender: Reported by DDS as a binary variable with only male or female options.
 

@@ -96,7 +96,7 @@ Perhaps the most popular estimate of a survival curve is the *Kaplan-Meier* or *
 
 - $I_t$:  # at risk of failure at time $t$ (i.e., those who did not fail before $t$ and those who were not censored before $t$)
 - $d_t$:  # who fail at time $t$
-- $q_t=\frac{d_t}{I_t}$:  estimated probability of failing at time $t$
+- $q_t=\frac{d_t}{I_t}$:  estimated conditional probability of failing at time $t$
 - $S(t)$:  cumulative probability of surviving beyond time $t$, estimated as 
 $\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)$
 

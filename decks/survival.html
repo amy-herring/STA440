@@ -1895,7 +1895,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <ul>
 <li><span class="math inline">\(I_t\)</span>: # at risk of failure at time <span class="math inline">\(t\)</span> (i.e., those who did not fail before <span class="math inline">\(t\)</span> and those who were not censored before <span class="math inline">\(t\)</span>)</li>
 <li><span class="math inline">\(d_t\)</span>: # who fail at time <span class="math inline">\(t\)</span></li>
-<li><span class="math inline">\(q_t=\frac{d_t}{I_t}\)</span>: estimated probability of failing at time <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(q_t=\frac{d_t}{I_t}\)</span>: estimated conditional probability of failing at time <span class="math inline">\(t\)</span></li>
 <li><span class="math inline">\(S(t)\)</span>: cumulative probability of surviving beyond time <span class="math inline">\(t\)</span>, estimated as <span class="math inline">\(\hat{S}(t)=\prod_{t_i \leq t} \left(1-\frac{d_{t_i}}{I_{t_i}}\right)\)</span></li>
 </ul>
 </section>

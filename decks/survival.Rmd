@@ -447,6 +447,12 @@ In some applications, monotone hazard functions may not be realistic. In reliabi
 
 Perhaps the most popular survival model in public health and medicine is the Cox (1972) proportional hazards model, which is a semi-parametric model that makes no assumption about the shape of the baseline hazard function.
 
+## Adding Covariates
+
+We are often interested in assessing the relationship between covariates or predictors of interest and survival. For example, in the Popes paper, the authors are interested in how the year (cohort) of birth is related to post-election survival and how the age at election is related to post-election survival.
+
+The most popular class of models used in survival analysis is the class of *proportional hazards* models.
+
 ## Proportional Hazards Models
 
 Under a proportional hazards model, the hazard of death at time $t$ for individual $i$ is given by $h_i(t)=h_0(t)e^{\beta_1 x_{i1}+\beta_2 x_{i2} + \cdots + \beta_px_{ip}}$.  We call $h_0(t)$ the baseline hazard. In a Weibull model, we assume that $h_0(t)=\lambda \alpha t^{\alpha-1}$, and in an exponential model, we assume $h_0(t)=\lambda$.
@@ -454,5 +460,9 @@ Under a proportional hazards model, the hazard of death at time $t$ for individu
 Consider a simple model with one binary covariate $x$ that takes value 1 for one group and 0 for the other. Then the hazard at time $t$ for those in group 1 is $h_0(t)e^\beta$, and the hazard at time $t$ for those in group 0 is $h_0(t)$. Because the hazard in group 1 is proportional to the hazard in group 0, this type of model is called a *proportional hazards* model. 
 
 $e^\beta$ is called the hazard ratio. When $\beta>0$, the hazard ratio$>1$, and we expect those in group 1 to fail more quickly. When $\beta<0$, the hazard ratio$<1$, and we expect those in group 1 to be protected against failure.
+
+## Accelerated Failure Time Models
+
+Another large class of survival models is that of *accelerated failure time (AFT)* models. The Weibull model can be interpreted both as a proportional hazards model and as an AFT model. Section 3 of the Stander et al. paper illustrates some of the nice features of interpretation of parameter estimates in the Weibull AFT model (e.g., you can interpret a function of the parameters as the percentage increase in survival time for a unit increase in a predictor).
 
 

@@ -43,15 +43,15 @@ library(tidyverse)
 
 - Formal evaluation of Popes paper (Individual assignment due 8/24). Each student will reproduce the analysis in the paper (using either method), update Figure 4 using current data on the two living popes (the censoring date you use should be 8/24/2020), and provide a peer review of the manuscript. Please use the .Rmd file on Sakai [peek at file format](decks/popes_individual.html) to upload your code and evaluation.
 
-- Report, reproducible code, and video (Group assignment due 8/28: produce a 8 page (maximum) report using R markdown that clearly addresses the case study goals and questions of interest. This report should follow the format of a standard scientific report and should include sections for the introduction, methods, results, and discussion. The methods section should clearly identify the approach to model selection and evaluation, and the results section should clearly specify the final model selected and provide some evaluation of the appropriateness of the model used. Code should be fully reproducible. The maximum duration of the video is 5 minutes.
+- Report, reproducible code, and video (Group assignment due 8/31: produce a 8 page (maximum) report using R markdown that clearly addresses the case study goals and questions of interest. This report should follow the format of a standard scientific report and should include sections for the introduction, methods, results, and discussion. The methods section should clearly identify the approach to model selection and evaluation, and the results section should clearly specify the final model selected and provide some evaluation of the appropriateness of the model used. Code should be fully reproducible. The maximum duration of the video is 5 minutes.
 
-- Peer review of reports (Individual assignment due 8/31): using the peer review rubric provided, provide constructive feedback on the other group's report you have been assigned. Compile the R markdown file and discuss reproducibility of the code.
+- Peer review of reports (Individual assignment due 9/2): using the peer review rubric provided, provide constructive feedback on the other group's report you have been assigned. Compile the R markdown file and discuss reproducibility of the code.
 
-- Revised report and response to reviews (Group assignment due 9/7): groups may submit revised reports and must submit a point-by-point response to the review comments provided
+- Revised report and response to reviews (Group assignment due 9/9): groups may submit revised reports and must submit a point-by-point response to the review comments provided
 
-- Peer (team member) evaluations (Individuals assignment due 9/7): each team member will submit an evaluation of the other members of the team, including how the team worked together and whether all team members deserve the same grade
+- Peer (team member) evaluations (Individuals assignment due 9/9): each team member will submit an evaluation of the other members of the team, including how the team worked together and whether all team members deserve the same grade
 
-- Peer reviewer evaluations (Group assignment due 9/7): each group will provide feedback to peer reviewers regarding the usefulness of their comments on the first submission
+- Peer reviewer evaluations (Group assignment due 9/9): each group will provide feedback to peer reviewers regarding the usefulness of their comments on the first submission
 
 
 

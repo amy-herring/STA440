@@ -73,6 +73,11 @@ Excerpts from preprint of Nolan and Stoudt's *Communicating with Data: The Art o
 
 - Writing the Stander et al model
 
+# Labs
+
+- [MCMC Review](decks/lab1.html)
+
+
 
 
 

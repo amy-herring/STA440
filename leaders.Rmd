@@ -49,7 +49,7 @@ library(tidyverse)
 
 - Revised report and response to reviews (Group assignment due 9/9): groups may submit revised reports and must submit a point-by-point response to the review comments provided
 
-- Peer (team member) evaluations (Individuals assignment due 9/9): each team member will submit an evaluation of the other members of the team, including how the team worked together and whether all team members deserve the same grade
+- Peer (team member) evaluations (Individual assignment due 9/9): each team member will submit an evaluation of the other members of the team, including how the team worked together and whether all team members deserve the same grade
 
 - Peer reviewer evaluations (Group assignment due 9/9): each group will provide feedback to peer reviewers regarding the usefulness of their comments on the first submission
 

@@ -70,8 +70,8 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | August 26  | Survival Analysis; Structure of a Data Analysis Report; Writing about Data |  |
 | August 28   | Work Day: Case Study 1 | Project Proposals |
 | August 31  |  Lab: Text Editors; Logging in to the Duke Compute Cluster; Meetings about Project Proposals | Case Study 1  |
-| September 2  | Meetings about Project Proposals  |  Case Study 1 Peer Reviews  |
-| September 4  | |  |
+| September 2  | Responding to Reviews; Meetings about Project Proposals  |  Case Study 1 Peer Reviews  |
+| September 4  | Report Writing: Introductions, Describing Data |  |
 | September 7  | Lab: Running Jobs on the Duke Compute Cluster |    |
 | September 9  | Case Study 2: Detecting Stress Using Wearables | Case Study 1 Response and Revision  |
 | September 11  |  |   |

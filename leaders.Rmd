@@ -62,7 +62,10 @@ Stander, J., Dalla Valle, L., and  Cortina-Borja, M. (2018). A Bayesian Survival
 
 Excerpts from preprint of Nolan and Stoudt's *Communicating with Data: The Art of Writing for Data Science* are available in the Sakai folder for the case study. These excerpts deal with the structure of a statistical report and how to describe data.
 
+# Notes
+
 - [Survival Analysis](decks/survival.html)
+- [Revising a Paper](decks/revisepaper.html)
 
 
 # Video Lectures (see Sakai for videos)

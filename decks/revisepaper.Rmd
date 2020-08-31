@@ -1,0 +1,153 @@
+---
+title: "Revising a Statistical Manuscript"
+output: 
+  revealjs::revealjs_presentation:
+    theme: night
+    highlight: espresso
+    center: true
+    transition: none
+    fig_caption: true
+    reveal_options:
+      progress: true
+      slideNumber: true
+---
+  
+## How to Revise a Statistical Manuscript
+
+Shortly you'll get feedback on your first case study from your professor, a TA, and 3-4 peer reviewers. A critical part of life as a scientist, whether in academia, industry, the business world, government, an NGO, or elsewhere, is how to hear, process, and incorporate critical feedback on your work.
+
+Two resources we'll use are the "How to Revise a Statistical Manuscript" document on Sakai and the Noble paper on revising a manuscript (10 simple rules).
+
+## The Basic Process
+
+1. Read the feedback
+
+2. Think about why you were given that feedback, and whether (and how) the feedback can improve your work
+
+3. Acknowledge to those who provided the feedback that you've done (2) and make improvements
+
+## Processing and Addressing Feedback
+
+Stephen Witte at University of Texas describes a process he calls *select-prioritize-reflect*.  After going through the process, in class (and in journal article review) you'll create a comprehensive *point by point* response to all the reviews.
+
+## Select
+
+Read the feedback, and consider each point.
+
+1. Does the comment help you understand your project any better?
+2. Does the comment help you meet the project goals in a better way?
+3. Does the comment give you specific advice to follow?  (Tip: if this type of comment comes from a supervisor or superior in some way, it would be risky not to address it)
+4. Do multiple readers make similar comments?  (Tip: if the comments are incorrect but made by multiple reviewers, then you're either working with some goof-offs, or more likely, you are not communicating clarly)
+5. When any reviewer misunderstands, very carefully consider how your writing might have been misinterpreted
+
+Selecting which feedback to address, and how comprehensively to address it,  is a key skill in research and in the workplace.
+
+## Prioritize
+
+Order the feedback from most to least important. Under time constraints, you may need to decide which comments are the most important to address. If you can't address a good comment, you should mention it in the discussion section of your paper or report.
+
+1. Which comments will help you improve your analysis or report in meeting the project goals?
+2. With the time you have for revision, which comments are you able to address?
+
+## Reflect
+
+Reflect on the feedback, revising your analysis plan and report.
+
+1. Why did you prioritize some comments over others?  Are you satisfied with that decision?
+2. Which choices will lead the biggest "bang for the buck" upon revision?
+3. What trends do you see across the reviewers in the feedback received, not only for this assignment but for all your assignments more generally?
+4. What additional resources or skills do you need to complete an effective revision?
+
+
+
+## Point by Point Response to Reviews
+
+As described in Noble (2017), when a journal article is revised, a comprehensive response to reviews is also submitted.
+
+*Point by point*: This is literally writing down every single thing the reviewers said, say in a font like italics, and then underneath every single thing describing how you addressed it, or if you didn't, why not.  You start with the comment from the most "powerful" or important person (e.g., the journal editor, the highest ranking person in your company, the professor) and work your way down. So for a journal the ordering would be comments from the editor, comments from the associate editor, comments from reviewer 1, reviewer 2, etc.
+
+## Comments from the Editor
+
+The editor often will summarize comments from all other reviewers, at times providing hints or keys to what the editor feels is most important. Ignore comments from the editor at your own peril. (Sometimes you should stick your neck out, but generally, it's a good idea to try to make the editor happy -- either by taking their advice or impressing them with your brilliance!)
+
+## Noble's 10 Simple Rules
+
+1. Provide an overview, then quote the full set of reviews 
+
+The overview mentions major criticisms, criticisms mentioned by multiple reviewers, and generally highlights the big issues (with a focus on what you addressed successfully of course).  For example, it might be something like this.
+
+<font size="4">*We would like to take this opportunity to thank the Editor, Associate Editor, and Reviewers for their insightful comments that have greatly improved the quality of this work. All praised the clarity of presentation, innovative model, and clear interpretation of results. Concerns were raised about the model validation, which we have addressed comprehensively on pages 3 and 10-12 of the revision, as well as about readability of the figures, which we have also improved. While one reviewer was hopeful we could incorporate data from the second quarter of 2020, we are unable to do so due to its delayed release. However, because these data are publicly available, we have provided reproducible code and clear instructions on how readers could do so on their own after the release date (now anticipated to be December 2020).*</font>
+
+## Rule 1, Continued
+
+Then, write down every single thing everyone said, labeled by their name, and include your response, e.g.
+
+Editor:
+
+*Insufficient evidence is provided showing validation and appropriateness of the model in the data application considered.*
+
+<font size="4">We have now included comprehensive external validation and sensitivity analysis, including results from fitting our model to data obtained during the same time period in a similar market. We have checked sensitivity of the results to prior distributions as well as to the form of the linear predictor in the model. Residual diagnostics show no evidence of lack of fit or violation of the normality assumption for our outcome.</font>
+
+*Equation (1) on page 3 appears to be missing indices.*
+
+<font size="4">Thank you for catching this mistake; we have now added $i$ to index individuals and $j$ to index time, where appropriate.</font>
+
+##
+
+2. Be polite and respectful of all reviewers
+
+If you have to, write a nasty response first, tear it up, and then be polite. Even if the reviewer fails to understand your work, it likely means that you could have done a better job communicating. You want to be sure the work is accessible to as broad an audience as possible.
+
+Sometimes you won't understand a reviewer's comment. You can state this in your revision, saying you did your best and if you misinterpreted you're happy to revise again as needed.
+
+Sometimes a reviewer clearly is not well-matched to your paper. Be polite to the reviewer, but you can include a separate note to the editor that you have concerns (do this sparingly).
+
+##
+
+3. Accept the blame
+
+If the reviewer misunderstood, apologize for being unclear. If the reviewer points out the 5th typo or grammatical error, apologize for not proofreading carefully.
+
+##
+
+4. Make the response self-contained
+
+Remember the figures I said I improved?  They should all be inserted in the response to reviews to show you did the work. In fact, it's nice to quote every change directly in the response. Don't assume the reviewer will read your revision -- in fact, with a paper, you are often hoping the reviewer skims your response and decides you've comprehensively addressed everything, recommending acceptance of your manuscript!
+
+## 
+
+5. Respond to *every* point raised by the reviewer
+
+Even if you feel the reviewer will disagree with your response, you should not try to avoid a difficult point by ignoring it.
+
+##
+
+6. Use typography to help the reviewer navigate your response
+
+This will tend to be a long document. Change the typeface, color, or indentation (or all three) to help the reviewer discriminate between the review you've copied and pasted, your response to the review, and any changes you have made to your manuscript.
+
+##
+
+7. When possible, begin your response to each comment with a direct answer to the point raised
+
+If possible, answer "yes" nor "no" directly, and then elaborate if needed.
+
+##
+
+8. When possible, do what the reviewer asks
+
+In a journal review, the reviewer holds considerable power over whether your manuscript is accepted. Don't give the impression you can't be bothered to do additional analysis or simulations the reviewer requests. If you don't think a request is useful, do it anyway, and put it in the response to reviews and then make a case for why you don't think the results belong in the main body of your manuscript (you can often offer to put them in an online supplement).
+
+##
+
+9. Be clear about what changed relative to the previous version
+
+Sometimes it can be hard for a reviewer to tell what changed, so refer explicitly to the previous and revised versions of the paper and make clear what the change is.
+
+##
+
+10. If needed, write the response twice
+
+You can interpret this one multiple ways! Sometimes it's really cleansing to write the profanity-laden, insulting response you feel burning in your belly. Get it down on paper and imagine the reviewer cares.  Then come back to reality, throw it away, and write the real one.
+
+Other times, your initial draft can be a working document for you and your coauthors as you consider the different ways to respond and the cost-benefit tradeoffs. Then as you make final decisions, you'll clean up the document to become something geared more towards convincing the editorial team that you responded comprehensively.

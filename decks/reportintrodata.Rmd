@@ -47,15 +47,37 @@ See Nolan and Stoudt chapter 3 (on Sakai) for some great suggestions here.
 5. Description of nonresponse, including any missing values, dropouts, or loss to follow-up
 6. Population to which the results should be generalized (or not)
 
+## Variable tables
+
+Here's an example of a codebook excerpt (from Nolan & Stoudt).
+
+![](images/codebook.png){width=6in}
+
+This is very helpful for a programmer, who needs to map numeric codes to their meanings. Someone who is reading your paper does not need to know (or care) that 3=once did, not now or that 99=unknown.
+
+## Tables
+
+Here is a corresponding publication-quality table (Nolan & Stoudt).
+
+![](images/pubtable.png)
+
+Often, instead of the table above, you will see a "table 1," providing simple descriptive statistics of variables, that will appear at the beginning of the results section.
+
+## 
+
+![Table 1 (APA Style)](images/table1.png)
+
+For the previous example, your table would also include % missing or unknown for each variable.
+
 ## Methods
 
 Data cleaning is an important part of the processing pipeline and should be clearly documented. Be sure to address aspects such as any observations excluded from analysis (and why), quantification & treatment of missing values, transformations and derivations of variables, aggregation of observations to a higher level of granularity (e.g., averaging exposures over a full day), and merges of multiple data sets.
 
-Nolan & Stoudt make an important distinction in section 3.2.1 distinguishing a table from a codebook (meant just for programmers) from a table for a paper or report (where I don't care whether 3=high school education or 4=high school education, just need to know that's a level of the variable of interest).
+For example, in the second case study, some observations are collected at 700 Hz, while others are collected at 4 Hz. You'll need to describe how the scales were aligned for analysis.
 
 ## More Methods
 
-In general, you want the methods section of the manuscript to describe an analytic process that is *computationally reproducible*. So any data processing or modeling steps should be clear. The model should be very clearly described using mathematical notation (pay attention to indices!). You should be able to read this section and then code the analysis.
+In general, you want the methods section of the manuscript to describe an analytic process that is *computationally reproducible*. So any data processing or modeling steps should be clear. The model should be very clearly described using mathematical notation (pay attention to indices!). You should be able to read this section and then code the analysis, potentially with help from the appendix for things like variable definitions (that is, the paper itself doesn't need to tell you that 3=once did, not now, only that it was a category you included as a predictor or outcome in a model).
 
 ## Analysis and Results
 

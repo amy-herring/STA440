@@ -23,6 +23,7 @@ Stress has well-documented effects on human health. A wearable device that is ab
 - Determine whether sensor data are useful in discriminating between stress and amusement conditions
 - Determine which types of sensor data are most useful in discriminating between stress and amusement, alone or in combination
 - Determine whether we can detect stress (vs amusement) only using the wrist-worn wearable
+- Quantify the heterogeneity across individuals in the response to stress versus amusement
 
 
 

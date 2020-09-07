@@ -21,6 +21,7 @@ Stress has well-documented effects on human health. A wearable device that is ab
 # Case Study Goals
 
 - Determine whether sensor data are useful in discriminating between stress and amusement conditions
+- If sensor data are useful in discriminating between stress and amusement, describe how (e.g., is higher blood pressure related to a greater likelihood of stress vs amusement)
 - Determine which types of sensor data are most useful in discriminating between stress and amusement, alone or in combination
 - Determine whether we can detect stress (vs amusement) only using the wrist-worn wearable
 - Quantify the heterogeneity across individuals in the response to stress versus amusement
@@ -43,6 +44,9 @@ Stress has well-documented effects on human health. A wearable device that is ab
 
 
 # Resources
+
+
+[Git and GitHub on the DCC](decks/gitdcc.html)
 
 [Physiology of Stress](https://samples.jblearning.com/0763740411/Ch%202_Seaward_Managing%20Stress_5e.pdf)
 

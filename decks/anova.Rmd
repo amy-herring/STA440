@@ -1,0 +1,216 @@
+---
+title: "ANOVA in Matrix Notation"
+output: 
+  revealjs::revealjs_presentation:
+    theme: night
+    highlight: espresso
+    center: true
+    transition: none
+    fig_caption: true
+    reveal_options:
+      progress: true
+      slideNumber: true
+---
+## Matrix Formulation
+
+As we move towards more complex models, it will be a lot easier to work with the model in *matrix* form rather than in *scalar* form. 
+
+##
+
+The *general linear model* is written in matrix form as $y=X\beta+\varepsilon$. Consider the treatment means model $y_{ij}=\mu_j+\varepsilon_{ij}$, where we have $n_j$ observations in each group $j$. We can represent this model in matrix form as follows.
+
+\begin{eqnarray*}
+y &=& X \mu + \varepsilon \\
+\begin{bmatrix} y_{11} \\ y_{12} \\ \vdots \\ y_{1n_1} \\ y_{21} \\ \vdots \\ y_{Jn_J} \end{bmatrix} &=& \begin{bmatrix} 1 & 0 & \cdots & 0 \\ 1 & 0 & \cdots & 0 \\ \vdots & & & \\ 1 & 0 & \cdots & 0 \\ 0 & 1 & 0 & \cdots \\ \vdots & \ddots & & \vdots \\ 0 & \cdots & & 1 \end{bmatrix}_{(\sum_j n_j) \times J}  \begin{bmatrix} \mu_1 \\ \vdots \\ \mu_J \end{bmatrix} + \begin{bmatrix} \varepsilon_{11} \\ \varepsilon_{12} \\ \vdots \\ \varepsilon_{1n_1} \\ \varepsilon_{21} \\ \vdots \\ \varepsilon_{Jn_J} \end{bmatrix}
+\end{eqnarray*}
+
+## Aside: Essence Matrix
+
+In ANOVA, the $X$ matrix has a special form, which is sometimes summarized by the *essence matrix*, which shows  the unique rows of the matrix.
+
+  - The essence matrix of a treatment means formulation of ANOVA is the $J \times J$ identity matrix, with each row repeated $n_j$ times: if $j=3$ we have $\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$
+  
+##  
+
+  
+  - The essence matrix in reference cell coding is given by $\begin{bmatrix} 1 & 1 & 0  \\ 1 & 0 & 1  \\ 1 & 0 & 0  \end{bmatrix}$ 
+  
+  (assuming without loss of generality that the last group is the reference)
+  
+  
+In each case, the row corresponding to group $j$ is repeated $n_j$ times so that the full $X$ matrix has $\sum_j n_j$ rows.
+
+
+## Simple Example
+
+Consider a study in which we wish to compare pain levels among children recovering from surgery who were randomized to one of three groups:  audio books (chosen by each child), music (the child could select the playlist), or control (noise cancelling headphones). After 30 minutes of one of the three conditions, each child rated his or her pain status using the following scale.
+
+
+![](images/faces.gif){width=50%}
+
+## 
+
+The study is described [here](https://www.npr.org/sections/health-shots/2015/06/22/415048075/to-ease-pain-reach-for-your-playlist-instead-of-popping-a-pill), but we will consider similar data from a hypothetical smaller study (n=15 total).  Suppose the data from the three groups is as follows.
+
+Audio books:  5,6,7,2,6
+Music:  5,4,4,7,6
+Control: 4,8,7,6,10
+
+Write each element of $y=X\beta+\varepsilon$ in matrix or vector form using a group means coding scheme.  Once you've finished, repeat the exercise using reference cell coding.
+
+
+
+## Least Squares Estimation
+
+The least squares estimate minimizes the sum of squared residuals given by 
+
+\begin{eqnarray*}
+SSE&=& (y-\widehat{y})'(y-\widehat{y}) \\
+&=& (y-X\widehat{\mu})'(y-X\widehat{\mu}) \\
+&=& y'y-2\widehat{\mu}'X'y+\widehat{\mu}'X'X\widehat{\mu}
+\end{eqnarray*}
+
+
+
+##
+
+To find $\mu$ that minimizes the SSE$=y'y-2\mu'X'y+\mu'X'X\mu$ take derivatives:
+
+$$\frac{\partial SSE}{\partial \mu}=0-2X'y+2X'X\mu$$ and then solve for 0:
+
+$$0=-2X'y+2X'X\widehat{\mu}$$ to get the *normal equations* $$(X'X)_{p \times p}\widehat{\mu}=X'y.$$
+
+[Read more here if you're rusty on matrix differentiation.](https://eli.thegreenplace.net/2015/the-normal-equation-and-matrix-calculus/)
+
+
+##
+
+When $X$ has rank $p$, we solve the normal equations
+
+\begin{eqnarray*}
+(X'X)\widehat{\mu}&=&X'y \\
+(X'X)^{-1}(X'X)\widehat{\mu}=(X'X)^{-1}X'y \\
+\widehat{\mu}=(X'X)^{-1}X'y
+\end{eqnarray*}
+
+Our least squares estimate in this case is unique, the best linear unbiased estimate, and if our errors are Gaussian, $\widehat{\mu}$ is the MLE and minimum variance unbiased estimator. 
+
+When $X$ has rank $<p$, we can use a generalized inverse, but $\widehat{\mu}$ is not unique, though the predicted values and residuals are unique.
+
+## Multi-Way ANOVA and Interactions
+
+ANOVA is easily extended to accommodate any number of categorical variables. Variables may each contribute independently to a response, or they may work together to influence response values.
+
+*Interaction effects* are important when the association between one independent variable and the response may depend on the level of another independent variable. 
+[Click this link for insight on what interactions imply in terms of group means](https://courses.washington.edu/smartpsy/interactions.htm)
+
+## Interaction Example
+
+For example, suppose that we are interested in a two-way ANOVA model in which the response $y$ is a measure of headache pain, and the independent variables include the type of pill taken (placebo (j=1) or ibuprofen (j=2)) and the number of pills taken (k=1 or k=2). While we may expect lower pain if multiple ibuprofen pills are taken, we would not expect the same decrease in pain if multiple placebo pills were taken. 
+
+
+Consider the model $y_{ijk}=\mu + \alpha I(j=2) + \beta I(k=2) + \gamma I(j=k=2)+\varepsilon_{ijk}$.
+
+##
+
+$y_{ijk}=\mu + \alpha I(j=2) + \beta I(k=2) + \gamma I(j=k=2)+\varepsilon_{ijk}$
+
+In this model, the mean is parameterized as follows.
+
+| Drug | \# of Pills | Mean |
+| ---- | :-----------: | :----: |
+| Placebo | 1 | $\mu$ | 
+| Placebo | 2 | $\mu+\beta$ |
+| Ibuprofen | 1 | $\mu+\alpha$ |
+| Ibuprofen | 2 | $\mu +\alpha+\beta+\gamma$ |
+
+
+What types of parameter values would we expect to see if there is an interaction in which there is a dose effect for Ibuprofen but not for placebo?
+
+  
+##
+
+$y_{ijk}=\mu + \alpha I(j=2) + \beta I(k=2) + \gamma I(j=k=2)+\varepsilon_{ijk}$
+
+In this model,
+
+  - the expected difference in pain level moving from 1 to 2 ibuprofen pills is $\mu+\alpha - \mu - \alpha - \beta - \gamma$
+  - the expected difference in pain level moving from 1 to 2 placebo pills is $\mu - \mu - \beta$
+  - the expected drug effect for those taking one pill is $\mu+\alpha-\mu=\alpha$
+  - the expected drug effect for those taking two pills is $\mu+\alpha+\beta+\gamma - \mu - \beta=\alpha+\gamma$
+  
+  
+So no interaction ($\gamma=0$) means that the drug effect is the same regardless of the number of pills taken. For there to be no drug effect at all, we need $\gamma=0$ and $\alpha=0$.  
+
+
+
+
+## R's Most Exciting Data
+
+Get ready -- we are going to explore R's most thrilling data -- the famous tooth growth in Guinea pigs data!
+
+![](images/olivertwist.jpg)
+
+Ahh, how cute!  Our Dickensian guinea pig has a mystery to solve -- which type of Vitamin C supplement is best for tooth growth!
+
+##
+
+
+![](images/teeth1.jpg){width=20%}
+
+
+Guinea pig dental problems are NOT fun. Our dataset (Crampton, 1947) contains as a response the length of odontoblasts (cells responsible for tooth growth) in 60 guinea pigs, each of which receives one dose of vitamin C (0.5, 1, or 2 mg/day) via one of two delivery methods (orange juice (OJ) or ascorbic acid (VC)). Researchers wanted to know if the odontoblast length could be used as a marker of Vitamin C uptake, for the purposes of providing better nutritional supplementation to members of the Canadian armed forces (alas, the first of many injustices for Oliver Twisted Teeth -- the study was not done to help little Guinea piggies).
+
+##
+
+
+```{r guineadescriptives0,echo=TRUE, eval=FALSE}
+library(ggplot2)
+gp=ToothGrowth
+gp$dose=as.factor(gp$dose)
+gp=arrange(gp,supp,asc(supp))
+# Default bar plot
+p<- ggplot(gp, aes(x=dose, y=len, fill=supp)) + 
+  geom_bar(stat="identity", position=position_dodge()) 
+# Finished bar plot
+p+labs(title="Odontoblast length by dose", x="Dose (mg)", y = "Length")+
+   theme_classic() +
+   scale_fill_manual(values=c('#E69F00','#999999'))
+
+
+```
+
+##
+
+```{r guineadescriptives,echo=FALSE, warning=FALSE, message=FALSE, out.width="50%"}
+library(ggplot2)
+library(dplyr)
+gp=ToothGrowth
+gp$dose=as.factor(gp$dose)
+# Default bar plot
+p<- ggplot(gp, aes(x=dose, y=len, fill=supp)) + 
+  geom_bar(stat="identity", position=position_dodge()) 
+# Finished bar plot
+p+labs(title="Odontoblast length by dose", x="Dose (mg)", y = "Length")+
+   theme_classic() +
+   scale_fill_manual(values=c('#E69F00','#999999'))
+
+```
+
+Looking at the boxplot of the growth data, what type of ANOVA model may be most appropriate?  Take a moment to write a model in mathematical notation -- then we will confer with groups on possible choices.
+
+## Your task!
+
+1. Under your ANOVA model, write out (in terms of parameters) the means for each combination of supplement type and dose.
+2. Fit your model and provide a one paragraph summary of the analysis in language accessible to the general public. (Hint: remember the *aov* command in R)
+3. Suppose that greater lengths are indicative of better absorption. Make a recommendation for the dose(s) and supplement type(s) to be used to deliver vitamin C to armed forces members, assuming that the goal is to maximize absorption of vitamin C. *Use statistical evidence to support your recommendation.* (Hint: consider the *TukeyHSD* command in R)
+4. Conduct diagnostic checks to see how well the assumptions behind your model are satisfied. Are there any reasons for concern about your model choice? (Hint: remember you can use the *plot* command applied to the ANOVA object to see residual plots)
+
+
+
+
+
+
+
+
+

@@ -42,7 +42,7 @@ We will present predictions weekly, and the final case study grading criteria wi
 - [Google Street View and Voting](https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/)
 - [Pickup Trucks and Voting](http://www.thedrive.com/news/16712/trump-supporting-towns-more-likely-to-be-filled-with-pickup-trucks-study-claims)
 
-# Video Lectures (See Sakai)
+# Video Lectures (See Sakai - these are shorter bytes of what we covered in class)
 
 [Matrix Formulation of the Linear Model]
 
@@ -57,6 +57,9 @@ We will present predictions weekly, and the final case study grading criteria wi
 
 
 # Slides 
+- [ANOVA](decks/anova.html)
+- [Multilevel Models](decks/multilevel.html)
+- [Radon Code in One File](decks/radoncode.html)
 - [Basics of Election Prediction](decks/cs03_1.html)
 - [Poststratification and Weighting](decks/cs03_2.html)
 - [MRP Tutorial](decks/cs03_3.html)

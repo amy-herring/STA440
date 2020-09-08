@@ -73,9 +73,9 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | September 2  | Responding to Reviews; Meetings about Project Proposals  |  Case Study 1 Peer Reviews  |
 | September 4  | Report Writing: Introductions, Describing Data |  |
 | September 7  | Lab: Running Jobs on the Duke Compute Cluster |    |
-| September 9  | Case Study 2: Detecting Stress Using Wearables | Case Study 1 Response and Revision  |
-| September 11  |  |   |
-| September 14  | Lab: Handling Big Data | Project Introduction, Data Description, EDA |
+| September 9  | Case Study 2: Detecting Stress Using Wearables | Case Study 1 Response and Revision, Peer Evals, Reviewer Evals  |
+| September 11  | Back to ANOVA: Design a Model |   |
+| September 14  | Lab: Brinnae Bent, Wearables Expert | Project Introduction, Data Description, EDA |
 | September 16  |  |  |
 | September 18  |   | Project Peer Reviews |
 | September 21  |       |   |

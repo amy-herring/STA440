@@ -197,7 +197,7 @@ p+labs(title="Odontoblast length by dose", x="Dose (mg)", y = "Length")+
 
 ```
 
-Looking at the boxplot of the growth data, what type of ANOVA model may be most appropriate?  Take a moment to write a model in mathematical notation -- then we will confer with groups on possible choices.
+Looking at the bar plot of the growth data, what type of ANOVA model may be most appropriate?  Take a moment to write a model in mathematical notation -- then we will confer with groups on possible choices.
 
 ## Your task!
 

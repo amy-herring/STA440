@@ -192,6 +192,19 @@ This motivates the use of random effects ANOVA to handle cases in which we expec
 It is often convenient to stack our observations into a long vector $Y_{N \times 1}$ organized by groups.  For simplicity in exposition, assume $n_j=n$ and the total sample size $N=nJ$. Then assuming $Y$ follows a multivariate normal distribution (which follows from our specification previously), we can express $$\text{Cov}(Y)=\sigma^2I_{N\times N} + \tau^2 \begin{pmatrix} J_n & 0 & \cdots & 0 \\ 0 & J_n & \cdots & 0 \\
 \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & \cdots & J_n \end{pmatrix}=I_J \otimes V,$$ where $V=\sigma^2I_n+\tau^2J_n$ and $J_n$ is an $n \times n$ matrix of 1's.
 
+##
+
+
+$$\text{Cov}(Y)=\sigma^2I_{N\times N} + \tau^2 \begin{pmatrix} J_n & 0 & \cdots & 0 \\ 0 & J_n & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots \\ 0 & 0 & \cdots & J_n \end{pmatrix}=$$
+$$\tiny \begin{pmatrix} \sigma^2+\tau^2 & \tau^2 & \cdots & \tau^2 & 0 & \cdots & 0 & \cdots & \cdots & 0 \\ \tau^2 & \sigma^2+\tau^2 & \cdots & \tau^2 & 0 & \cdots & 0 & \cdots & \cdots & 0 \\ 
+\vdots &  & \ddots &  &  &  & &  &  &  \\ \tau^2 & \tau^2 & \cdots & \sigma^2+\tau^2 & 0 & \cdots & 0 & \cdots & \cdots & 0 \\ 0 & 0 & \cdots & 0 & \ddots  &  &  &  \cdots &  \cdots & 0  \\
+\vdots &  & \ddots &  &  & \ddots & &  &  &  \\ \vdots &  & \ddots &  &  &  & &  &  &  \\
+\vdots &  & \ddots &  &  &  & &  &  &  \\ 0 & \cdots & \cdots & 0 & 0 & \cdots & \sigma^2+\tau^2 & \tau^2 & \cdots & \tau^2 & \\ 0 & \cdots & \cdots & 0 & 0 & \cdots & \tau^2 & \sigma^2+\tau^2 & \cdots & \tau^2 & \\ 0 & \cdots & \cdots & 0 & 0 & \cdots & \tau^2 & \tau^2 & \cdots & \sigma^2+\tau^2 & \end{pmatrix}$$
+
+
+
+
 ## Kronecker product
 
 The *Kronecker product* is a convenient way to express patterned covariance matrices (among other things).  For matrices $A_{m \times n}$ and $B_{p \times q}$, the *Kronecker product* $A \otimes B=\begin{bmatrix}a_{11}B & \cdots & a_{1n}B \\ \vdots & \ddots & \vdots \\ a_{m1}B & \cdots & a_{mn}B \end{bmatrix}$.

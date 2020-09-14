@@ -1954,6 +1954,14 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <p>It is often convenient to stack our observations into a long vector <span class="math inline">\(Y_{N \times 1}\)</span> organized by groups. For simplicity in exposition, assume <span class="math inline">\(n_j=n\)</span> and the total sample size <span class="math inline">\(N=nJ\)</span>. Then assuming <span class="math inline">\(Y\)</span> follows a multivariate normal distribution (which follows from our specification previously), we can express <span class="math display">\[\text{Cov}(Y)=\sigma^2I_{N\times N} + \tau^2 \begin{pmatrix} J_n &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; J_n &amp; \cdots &amp; 0 \\
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \cdots &amp; J_n \end{pmatrix}=I_J \otimes V,\]</span> where <span class="math inline">\(V=\sigma^2I_n+\tau^2J_n\)</span> and <span class="math inline">\(J_n\)</span> is an <span class="math inline">\(n \times n\)</span> matrix of 1’s.</p>
 </section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><span class="math display">\[\text{Cov}(Y)=\sigma^2I_{N\times N} + \tau^2 \begin{pmatrix} J_n &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; J_n &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \cdots &amp; J_n \end{pmatrix}=\]</span> <span class="math display">\[\tiny \begin{pmatrix} \sigma^2+\tau^2 &amp; \tau^2 &amp; \cdots &amp; \tau^2 &amp; 0 &amp; \cdots &amp; 0 &amp; \cdots &amp; \cdots &amp; 0 \\ \tau^2 &amp; \sigma^2+\tau^2 &amp; \cdots &amp; \tau^2 &amp; 0 &amp; \cdots &amp; 0 &amp; \cdots &amp; \cdots &amp; 0 \\ 
+\vdots &amp;  &amp; \ddots &amp;  &amp;  &amp;  &amp; &amp;  &amp;  &amp;  \\ \tau^2 &amp; \tau^2 &amp; \cdots &amp; \sigma^2+\tau^2 &amp; 0 &amp; \cdots &amp; 0 &amp; \cdots &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; \cdots &amp; 0 &amp; \ddots  &amp;  &amp;  &amp;  \cdots &amp;  \cdots &amp; 0  \\
+\vdots &amp;  &amp; \ddots &amp;  &amp;  &amp; \ddots &amp; &amp;  &amp;  &amp;  \\ \vdots &amp;  &amp; \ddots &amp;  &amp;  &amp;  &amp; &amp;  &amp;  &amp;  \\
+\vdots &amp;  &amp; \ddots &amp;  &amp;  &amp;  &amp; &amp;  &amp;  &amp;  \\ 0 &amp; \cdots &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots &amp; \sigma^2+\tau^2 &amp; \tau^2 &amp; \cdots &amp; \tau^2 &amp; \\ 0 &amp; \cdots &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots &amp; \tau^2 &amp; \sigma^2+\tau^2 &amp; \cdots &amp; \tau^2 &amp; \\ 0 &amp; \cdots &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots &amp; \tau^2 &amp; \tau^2 &amp; \cdots &amp; \sigma^2+\tau^2 &amp; \end{pmatrix}\]</span></p>
+</section>
 <section id="kronecker-product" class="slide level2">
 <h2>Kronecker product</h2>
 <p>The <em>Kronecker product</em> is a convenient way to express patterned covariance matrices (among other things). For matrices <span class="math inline">\(A_{m \times n}\)</span> and <span class="math inline">\(B_{p \times q}\)</span>, the <em>Kronecker product</em> <span class="math inline">\(A \otimes B=\begin{bmatrix}a_{11}B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp; \ddots &amp; \vdots \\ a_{m1}B &amp; \cdots &amp; a_{mn}B \end{bmatrix}\)</span>.</p>
@@ -1973,7 +1981,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 &amp;=&amp; Z\text{Var}(b)Z&#39; + \text{Var}(\varepsilon) = ZGZ&#39;+R =\tau^2ZZ&#39;+\sigma^2I
 \end{eqnarray*}\]</span></p>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p>Assuming our <span class="math inline">\(N\)</span> outcomes follow the multivariate Gaussian distribution, our likelihood is given by <span class="math display">\[\frac{1}{(2\pi)^\frac{N}{2}|\Sigma|^\frac{1}{2}}\exp\left(-\frac{1}{2}(y-X\beta)&#39;\Sigma^{-1}(y-X\beta)\right),\]</span></p>
 <p>and we often work with the log-likelihood, given by</p>
@@ -2038,7 +2046,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <span id="cb2-5"><a href="#cb2-5"></a>lm.unpooled&lt;-<span class="kw">lm</span>(<span class="dt">formula=</span>y<span class="op">~</span>x<span class="op">+</span><span class="kw">factor</span>(county)<span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb2-6"><a href="#cb2-6"></a><span class="kw">summary</span>(lm.unpooled)</span></code></pre></div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <pre><code>## 
 ## Call:
@@ -2059,7 +2067,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ## Multiple R-squared:  0.07178,    Adjusted R-squared:  0.07077 
 ## F-statistic: 70.91 on 1 and 917 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <pre><code>## 
 ## Call:
@@ -2164,7 +2172,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ## Multiple R-squared:  0.7671, Adjusted R-squared:  0.7431 
 ## F-statistic: 31.91 on 86 and 833 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#basic MLM with just random intercept for county</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="kw">library</span>(lme4)</span>
@@ -2172,7 +2180,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <span id="cb5-4"><a href="#cb5-4"></a><span class="kw">summary</span>(M1)</span>
 <span id="cb5-5"><a href="#cb5-5"></a><span class="kw">coef</span>(M1)</span></code></pre></div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <pre><code>## Loading required package: Matrix</code></pre>
 <pre><code>## 

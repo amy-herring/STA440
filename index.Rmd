@@ -80,7 +80,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | September 18  |  Project Work Day | Project Peer Reviews |
 | September 21  |  Lab     |   |
 | September 23     | Writing a Statistical Analysis Plan |   | 
-| September 25     |  |  |
+| September 25     | Writing a Statistical Analysis Plan |  |
 | September 28    |  | Case Study 2  |
 | September 30   |   | Case Study 2 Peer Reviews |
 | October 2   |  | Midsemester grades (my deliverable)  |

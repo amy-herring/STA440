@@ -1,0 +1,92 @@
+---
+title: "Writing a Statistical Analysis Plan"
+output: 
+  revealjs::revealjs_presentation:
+    theme: night
+    highlight: espresso
+    center: true
+    transition: none
+    fig_caption: true
+    reveal_options:
+      progress: true
+      slideNumber: true
+---
+  
+## Statistical Analysis Plan
+
+A *statistical analysis plan (SAP)* describes planned analyses for a study.  This plan serves numerous purposes.
+
+- NIH *requires* submission of a SAP for any funded clinical trial.  According to the NIH director, Dr. Francis COllins, the goal is go discourage "P-value hacking, where people sort of shop around for a statistical test to give them the p-value that they love."
+- Many journals (including NEJM and JAMA) request the SAP for publication of clinical trials 
+- SAP's for observational studies enhance reproducibility and transparency
+- "Contract" between study PI's and data scientists facilitating clarity in communication and increased efficiency
+
+## SAP Timing
+
+The SAP is generally completed along with the study protocol, often at the time of a grant application but certainly before data analysis begins.
+
+The rationale for this timing is that this prevents "p-hacking" or "data-dredging" in which hypotheses are modified based on "significance" of findings.  Such exploratory analyses have their place but should be clearly denoted as such in any reporting.
+
+## SAP's and the Individual Project
+
+The [Duke Clinical & Translational Science Institute (CTSI) SAP](https://sakai.duke.edu/access/content/group/e5248fc7-f1dd-4cdb-a810-1432395057b6/Report%20Writing%20and%20Revision/Writing%20a%20Statistical%20Report/SAP%20template%202019-05-28.docx) is a nice example of the type of SAP used in major medical centers. Completing this SAP is a great way to help you formalize your hypotheses and analysis plan as we move towards the methods submission of your project (October 12).
+
+I'll use as an example the Popes/leaders data from case study 1. You can download the SAP and follow along -- we'll take breaks so that you can fill in your own information.
+
+We'll go back and forth a bit between sections of the report -- the first half is administrative (yet still important), and the second half provides the meat of the analysis plan.
+
+## Admin. Info. & Investigator Agreement
+
+![](images/admin.png)
+
+Key components of these sections: ethical assurances, authorship information, timeframe
+
+## Study Overview
+
+![](images/aims.png)
+
+Let's hone in on the relevant items in the second section.
+
+## 1. Study Overview
+
+Background/Introduction: *This section should be written by the author of the SAP so other biostatisticians can easily follow and to ensure everyone understands the background and goals of the project. If pieces are copied from the protocol or other documents, cite the document. References are not necessary here.*
+
+1.1 Study Aims
+
+1.2.1 Primary Hypotheses (1-2 primary; rest are secondary)
+
+1.2.2 Secondary Hypotheses
+
+## 1. Study Overview
+
+<small>Background/Introduction: Stander et al. explored post-election lifetimes of Roman Catholic popes in a paper designed to facilitate teaching of survival analysis techniques. We plan to consider a slightly enlarged group of leaders in an attempt to hone in on potential changes in lifespan over the years as well as across leadership types. </small>
+
+
+Aim 1: How are year of birth and type of leadership related to a leader's lifespan?
+
+Aim 2: Does any relationship between year of birth and lifespan depend on the type of leadership?
+
+Aim 3: Determine the probability that certain living world leaders will outlive each other.
+
+
+The primary hypothesis is that modern leaders typically enjoy longer lifespans than historical leaders.
+
+
+The secondary hypothesis is that the relationship between year of birth and lifespan may vary depending on leadership type, which is an imperfect proxy for sociopolitical conditions that may be changing over time.
+
+## Complete this section for your project!
+
+##
+
+![](images/section3.png)
+
+##
+
+|Outcome           |Description                     |Variables and Source     | Specifications |
+| ----------    | ---------------------------         | --------------- | --------- |
+| Lifespan    | Total known lifespan (years)        |   Age.Event  |  Years |
+| Censoring indicator | Indicates whether date of death is known | Censored | 1=Censored (still alive or date of death not known), 0 otherwise | 
+
+
+
+

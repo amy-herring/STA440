@@ -41,6 +41,7 @@ Students seeking interesting datasets may wish to consider one or more of the fo
 - Duke Global Health Institute Research Data Analysis Center (RDAC) Statistical Analysis Plan Template (on Sakai): while you should not follow this format, it's helpful to look at the structure and content needed when requesting analysis from a professional statistics core, as it will help you see relevant aspects in describing data and getting information needed to craft an analysis plan.
 - Structure of a Data Analysis Report by Prof. Brian Junker (on Sakai): great guide to the bones of a good project report
 - [Slides on Report Writing](decks/reportintrodata.html)
+- [Slides on Statistical Analysis Plans](decks/sap.html)
 
 # Reports 
 

@@ -196,6 +196,8 @@ When comparing leadership types with differing protocols in age of assuming offi
 
 Time (and budget) permitting, we will address issues of generalizability of the data via exploratory analysis incorporating available data on other types of leaders, including other heads of state or major religious or social figures. Challenges in using data on social/societal leaders, such as Wangari Maathai, Malala Yousafzai, or Greta Thunberg, will be defining the time point at which they assumed a leadership role. 
 
+## Work on Your SAP!
+
 
 
 

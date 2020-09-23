@@ -81,17 +81,17 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | September 21  |  Lab     |   |
 | September 23     | Writing a Statistical Analysis Plan |   | 
 | September 25     | Writing a Statistical Analysis Plan |  |
-| September 28    |  | Case Study 2  |
-| September 30   |   | Case Study 2 Peer Reviews |
-| October 2   |  | Midsemester grades (my deliverable)  |
+| September 28    |  |   |
+| September 30   |   | Case Study 2 |
+| October 2   |  | Case Study 2 Peer Reviews; Midsemester grades (my deliverable)  |
 | October 5    | Case Study 3: Election Prediction |   |
-| October 7    |  | Case Study 2 Response and Revision |
-| October 9    |  |   |
-| October 12    |  | Project Methods and Analysis Plan  | 
+| October 7    |  |  |
+| October 9    |  | Case Study 2 Response and Revision  |
+| October 12    |  |   | 
 | October 14    |  | Case Study 3: Who Votes in NC? |
-| October 16   |   | Project Peer Reviews  | 
-| October 19    |  | Case Study 3: Who Votes? Peer Reviews  | 
-| October 21    |  | Case Study 3: Analysis Plan   |
+| October 16   |   |  Case Study 3: Who Votes? Peer Review  | 
+| October 19    |  | Project Methods and Analysis Plan  | 
+| October 21    |  |  Project Peer Reviews |
 | October 23   | |  |
 | October 26    |  |   | 
 | October 28   |  |  |

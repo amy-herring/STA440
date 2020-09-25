@@ -323,8 +323,8 @@ $(document).ready(function () {
 </div>
 <div id="case-study-goals" class="section level1">
 <h1>Case Study Goals</h1>
-<p>Goals of this case study are (1) to predict the probability that the US Senate remains in Republican control, (2) to predict the electoral college vote, (3) to predict the outcomes of all NC Congressional elections (the 13 federal Representatives to Congress), and (4) to predict the outcome of the NC Senate election, including characterization of uncertainty in predictions.</p>
-<p>We will present predictions weekly. In addition, prizes will be given in a number of categories (e.g., most creative useful data source).</p>
+<p>Goals of this case study are (1) to predict the outcome of the presidential election, (2) to predict whether the US Senate remains in Republican control, (3) to predict the electoral college vote, (4) to predict the outcomes of all NC Congressional elections (the 13 federal Representatives to Congress), and (5) to predict the outcome of the NC Senate election, including characterization of uncertainty in predictions.</p>
+<p>We will present predictions and corresponding uncertainty quantification weekly. In addition, prizes will be given in a number of categories (e.g., most creative useful data source).</p>
 </div>
 <div id="data" class="section level1">
 <h1>Data</h1>
@@ -333,7 +333,7 @@ $(document).ready(function () {
 <li><a href="https://dl.ncsbe.gov/?prefix=data/">NC voter files</a> Note these data are processed on Sakai.</li>
 <li><a href="https://cces.gov.harvard.edu/pages/welcome-cooperative-congressional-election-study">Cooperative Congressional Election Study</a></li>
 <li><a href="https://opportunityinsights.org/data/?geographic_level=0&amp;topic=0&amp;paper_id=0#resource-listing">Opportunity Insights Data Library</a></li>
-<li>See data on Sakai under Resources in the Case Study 3 folder for 2010 Census summary data and 2016 and 2018 voting data in NC</li>
+<li>See data on cluster</li>
 </ul>
 </div>
 <div id="resources" class="section level1">
@@ -347,6 +347,13 @@ $(document).ready(function () {
 <li><a href="https://ballotpedia.org/U.S._House_battlegrounds,_2020">Which districts are viewed as competitive?</a></li>
 <li><a href="https://fivethirtyeight.com/features/registered-voter-polls-will-usually-overrate-democrats/">Why do we care about likely voters?</a></li>
 <li><a href="https://fivethirtyeight.com/politics/elections/">FiveThirtyEight’s election page</a></li>
+<li><a href="https://github.com/fivethirtyeight/data/tree/master/polls">FiveThirtyEight 2020 polling data overview</a></li>
+<li><a href="https://projects.fivethirtyeight.com/polls-page/president_polls.csv">2020 Presidential polls</a></li>
+<li><a href="https://projects.fivethirtyeight.com/polls-page/senate_polls.csv">2020 Senate polls</a></li>
+<li><a href="https://projects.fivethirtyeight.com/polls-page/house_polls.csv">2020 House of Representatives polls</a></li>
+<li><a href="https://github.com/fivethirtyeight/data/tree/master/pollster-ratings">Historic Polling Data: final 3 weeks, 1998-2019</a></li>
+<li><a href="https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/asrh/cc-est2019-alldata-37.csv">2019 NC population data (Census Bureau)</a></li>
+<li><a href="https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2010-2019/cc-est2019-alldata.pdf">NC population data codebook</a></li>
 <li><a href="https://elections.huffingtonpost.com/pollster">Huffington Post Pollster</a></li>
 <li><a href="https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/">Google Street View and Voting</a></li>
 <li><a href="http://www.thedrive.com/news/16712/trump-supporting-towns-more-likely-to-be-filled-with-pickup-trucks-study-claims">Pickup Trucks and Voting</a></li>
@@ -374,23 +381,24 @@ $(document).ready(function () {
 <div id="reports" class="section level1">
 <h1>Reports</h1>
 <ul>
-<li>Interim report 1: who votes in NC? Using the NC voter files, identify who votes in NC so that these data can be used in conjunction with surveys and other data in order to predict outcomes of NC congressional elections. Present results in short (&lt;5 min) video presentation on October 16.</li>
-<li>Weekly updates on predictions</li>
-<li>Final report: Items for Final Report
+<li><p>Groups: you can select your own group, or I can put you into groups. There are no restrictions on who can be in your group. It must have at least 3 members and no more than 5. Groups will be allocated on a first-come, first-served basis. I reserve the right to add group members to smaller groups if needed (any groups I construct from students without team member preferences will aim to have 4-5 students).</p></li>
+<li><p>Interim report: who votes in NC? Using the NC voter files, identify who votes in NC so that these data can be used in conjunction with surveys and other data in order to predict outcomes of NC congressional elections. Present results in short (&lt;5 min) video presentation on October 16. This report will be peer reviewed.</p></li>
+<li><p>Weekly updates on predictions starting 9/16</p></li>
+<li><p>Final report: Items for Final Report</p>
 <ul>
-<li>The final report itself should be structured with an introduction, description of methods (e.g., modeling and prediction strategy along with the models themselves), results (point and interval estimates of the % of votes won by each Congressional candidate; point and interval estimates of the probability the US Senate remains under Republican control, etc). Discussion should include some evaluation of the relative predictive ability of variables in your models (e.g., maybe you tried to predict voter turnout as a function of pet ownership rates, but maybe pet ownership rates are not at all predictive – so we want to know which data sources you felt were most useful) as well as discussion of strengths and weaknesses of your strategy. Any visualizations should be included (or linked, if they are interactive) in the final report. The final report should contain two appendices, described below.
+<li>The final report itself should be structured with an introduction, description of methods (e.g., modeling and prediction strategy along with the models themselves), results (point and interval estimates of the % of votes won by each Congressional candidate; point and interval estimates of relevant probabilities, etc). Discussion should include some evaluation of the relative predictive ability of variables in your models (e.g., maybe you tried to predict voter turnout as a function of pet ownership rates, but maybe pet ownership rates are not at all predictive – so we want to know which data sources you felt were most useful) as well as discussion of strengths and weaknesses of your strategy. Any visualizations should be included (or linked, if they are interactive) in the final report. The final report should contain two appendices, described below.
 <ul>
 <li>Appendix A: Numbered list of all models/modeling procedures, with explicit details about model purpose, model structure, and resulting estimates from each model (raw output is fine for this appendix). Reproducible code and data should also be uploaded to Sakai.</li>
 <li>Appendix B: List of all data sets/data sources used, along with an explicit mapping from the models in Appendix A to the variables used from Appendix B in each model.</li>
 </ul></li>
 </ul></li>
-<li>Video presentation after election: discuss what went right and wrong with your modeling and assumptions based on election outcomes (e.g., winners, who voted, etc.)</li>
+<li><p>Video presentation after election: discuss what went right and wrong with your modeling and assumptions based on election outcomes (e.g., winners, who voted, etc.)</p></li>
 </ul>
 </div>
 <div id="assessment" class="section level1">
 <h1>Assessment</h1>
-<p>In addition to the usual grade, a best prediction winner will be chosen, with all due honor and glory, based on the following algorithm developed by students in STA 340 (decision analysis), shown here for the outcome of the 13 NC congressional races.</p>
-<p>For a prediction <span class="math inline">\(p\)</span>, truth <span class="math inline">\(\theta\)</span>, and confidence interval <span class="math inline">\(CI\)</span> with bounds <span class="math inline">\(p_\min, p_\max\)</span>:</p>
+<p>In addition to the usual grade, a best prediction winner will be chosen, with all due honor and glory, based on the following algorithm developed by students in STA 340 (decision analysis), shown here for the outcome of the 13 NC congressional races. We’ll include the NC senate race in this algorithm as well.</p>
+<p>For a predicted vote share <span class="math inline">\(p\)</span>, truth <span class="math inline">\(\theta\)</span>, and confidence interval <span class="math inline">\(CI\)</span> with bounds <span class="math inline">\(p_\min, p_\max\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 L(p, \theta) &amp;=
@@ -398,7 +406,7 @@ L(p, \theta) &amp;=
 S &amp;= -\sum_{i=1}^{13} L(p_i, \theta_i)
 \end{aligned}
 \]</span></p>
-<p>Wrong point estimates within the <span class="math inline">\(CI\)</span> are penalized linearly and outside the <span class="math inline">\(CI\)</span> are penalized linearly with a higher slope. There is an additional penalty for wide confidence intervals, but only at 1/10th (or less) the cost of missing the point estimate.</p>
+<p>Point estimates within the <span class="math inline">\(CI\)</span> are penalized linearly and outside the <span class="math inline">\(CI\)</span> are penalized linearly with a higher slope. There is an additional penalty for wide confidence intervals, but only at 1/10th (or less) the cost of missing the point estimate.</p>
 <p>The term on the second line of the loss function only comes into play when a confidence interval did not include 0.5. That is, the team was very certain of calling the race for one side or the other. Being very certain and wrong incurs an additional loss. Being very certain and right incurs utility, but with lower magnitude than being wrong. The idea behind this choice is some races should be easy to call and being unambiguously wrong with the confidence interval should hurt more.</p>
 </div>
 

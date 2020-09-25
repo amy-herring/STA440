@@ -81,27 +81,27 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | September 21  |  Lab     |   |
 | September 23     | Writing a Statistical Analysis Plan |   | 
 | September 25     | Writing a Statistical Analysis Plan |  |
-| September 28    |  |   |
-| September 30   |   | Case Study 2 |
-| October 2   |  | Case Study 2 Peer Reviews; Midsemester grades (my deliverable)  |
-| October 5    | Case Study 3: Election Prediction |   |
+| September 28    | Lab: CS2 and Project Q&A  |   |
+| September 30   | Case Study 3: Election Prediction; Poststratification and Weighting  | Case Study 2 Due |
+| October 2   |  "Mr. P"; US Election System | Case Study 2 Peer Reviews; Midsemester grades (my deliverable)  |
+| October 5    |  Forecasting US Presidential Elections |   |
 | October 7    |  |  |
 | October 9    |  | Case Study 2 Response and Revision  |
 | October 12    |  |   | 
-| October 14    |  | Case Study 3: Who Votes in NC? |
-| October 16   |   |  Case Study 3: Who Votes? Peer Review  | 
-| October 19    |  | Project Methods and Analysis Plan  | 
-| October 21    |  |  Project Peer Reviews |
-| October 23   | |  |
-| October 26    |  |   | 
+| October 14    |  |  |
+| October 16   |   |  Project Methods and Analysis Plan   | 
+| October 19    |  |  Project Peer Reviews | 
+| October 21    |  |   |
+| October 23   | | Case Study 3: Who Votes in NC? |
+| October 26    |  | Case Study 3 Who Votes Peer Reviews  | 
 | October 28   |  |  |
 | October 30   | Lab |  |
-| November 2   |  | Case Study 3  |
+| November 2   |  | Case Study 3 Due |
 | November 4   |  | |
 | November 6   |  |  |
-| November 9   |  | Individual Project |
+| November 9   |  | Individual Project Due |
 | November 11   |  | Project Peer Reviews  | 
 | November 13   |  |  |
 | November 16   |  | Project Response and Revision Due |
-| November 19   |  | Last Day to Submit Project Revision Without Late Penalty|
+| November 19   |  | Last Day to Submit Project Revision Without Late Penalty |
 

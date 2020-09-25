@@ -12,7 +12,7 @@ output:
       slideNumber: true
 ---
 
-```{r setupa, include=FALSE}
+```{r setupa, include=FALSE,cache=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(lme4)
@@ -31,7 +31,7 @@ options(mc.cores=parallel::detectCores())
 ## Introduction
 
 - It is often of interest to researchers to consider state-level opinion, in addition to/instead of national-level opinion. 
-- Finding surveys that are uniform across all or most states is extremely challenging, and states done for one state sometimes are of lower quality than national-level surveys. 
+- Finding surveys that are uniform across all or most states is extremely challenging, and surveys done for one state sometimes are of lower quality than national-level surveys. 
 - One method of estimating state-level opinion using national survey data is called **multilevel regression and poststratification ("Mr. P")**. 
 - We will compare this approach with a simple approach of using empirical means and poststratifying without borrowing information across groups.
 
@@ -77,6 +77,32 @@ The US Census is a good source of information about characteristics of the full 
 - State level data provide information including \% of religious voters, voting history (Democrat or Republican), etc.
 - Census data will be used to estimate the \% of voters in subgroups in the state, given that poll respondents may not mirror the demographics of voting-age citizens. Ultimately, we need a dataset of the population counts for each subgroup, e.g. how many African Americans aged 18-25 went to college and reside in NC. For this tutorial, we will use the 5% Public Use Microdata Sample from the 2000 census. 
 
+## Data Quality Example: 2000 US Census
+
+Demographic data are often of limited quality. For the US Census, respondents are only given a binary sex classification. Data quality is further limited by having one person ("head of household") make this classification for all household residents.
+
+![](images/censusgender.png)
+
+## Data Quality Example: 2000 US Census
+
+![](images/censusethnicity.png)
+
+
+## Data Quality Example: 2000 US Census
+![](images/censusrace.png)
+
+## Data Quality Example: NC Voter Registration
+
+On the NC voter registration form, gender is recorded as binary, and race and ethnicity are self-classified into a small number of groups.
+
+![](images/ncvoterform.png)
+
+
+## Data Munging
+
+If we were to combine data from the US Census with data from the NC voter registration files, we would need to make some decisions about how to deal with missing data, classifications that are not 1:1 mappings, and variables with differing definitions (biological sex versus gender identity, to the extent respondents distinguish between them).
+
+
 ##
 
 
@@ -104,6 +130,7 @@ marriage.data=Statelevel %>%
 ## Data munging
 
 ```{r datamanipulation2, cache=TRUE}
+library(tidyverse)
 # combine demographic groups and label them
 marriage.data$race.female <- (marriage.data$female *3) + marriage.data$race.wbh
 marriage.data$race.female=factor(marriage.data$race.female,levels=1:6,
@@ -324,8 +351,9 @@ summary(ml.mod)
 
 Note we have no responses from AK or HI.
 
-```{r AKHI}
+```{r AKHI,cache=TRUE}
 # note nobody from AK or HI in survey
+library(tidyverse)
 marriage.data %>%
   filter(state=="AK", state=="HI")
 ```
@@ -377,7 +405,7 @@ bayes.mod <- brm(yes.of.all ~ (1|race.female) + (1|age.cat) + (1|edu.cat)
 
 ## Bayesian model results
 
-```{r bayesmod3}
+```{r bayesmod3,cache=TRUE}
 summary(bayes.mod)
 ```
 
@@ -506,7 +534,7 @@ predict_val=predict(bayes.mod, newdata=Census, allow_new_levels=TRUE,
 
 ## Prediction
 
-```{r showpred}
+```{r showpred,cache=TRUE}
 dim(Census)
 head(Census)
 ```
@@ -518,7 +546,8 @@ We can generate individual samples from our Bayesian model's predicted probabili
 
 ## Sampling
 
-```{r showpred2}
+```{r showpred2,cache=TRUE}
+library(tidyverse)
 options(width = 10000)
 str(predict(bayes.mod, newdata=Census, allow_new_levels=TRUE, 
         nsamples=500, summary=FALSE))

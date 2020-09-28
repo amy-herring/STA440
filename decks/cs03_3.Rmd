@@ -42,7 +42,7 @@ options(mc.cores=parallel::detectCores())
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(lme4)
-library(brms) #simple interface with Stan
+library(brms) #simple interface with Stan for Bayes MLM
 library(rstan)
 #devtools::install_github("hrbrmstr/albersusa")
 library(albersusa) #plotting
@@ -63,13 +63,13 @@ Then we use poststratification, in which we weight (poststratify) the estimates 
 
 ## Tutorial
 
-This tutorial draws heavily on Jonathan Kastellec's [MrP primer](http://www.princeton.edu/~jkastell/mrp_primer.html) and [Tim Mastny's version using Stan](https://timmastny.rbind.io/blog/multilevel-mrp-tidybayes-brms-stan/). You may find the paper at their website useful in addition to the shorter version presented here. First, download all three datasets [at this link](http://www.princeton.edu/~jkastell/mrp_primer.html).
+This tutorial draws heavily on Jonathan Kastellec's MrP Primer and [Tim Mastny's version using Stan](https://timmastny.rbind.io/blog/multilevel-mrp-tidybayes-brms-stan/). You may find the paper at their website useful in addition to the shorter version presented here. First, download all three datasets from Sakai.
 
 ## Analysis goal
 
 The goal is to estimate support for gay marriage in each state based on survey data that are potentially non-representative. Because not all subgroups of the population are equally likely to respond to polls, we worry that relying only on a survey could lead to biased estimates of support for gay marriage.  (For example, younger people may be more likely than older people to answer questions about gay marriage.)
 
-The US Census is a good source of information about characteristics of the full US population. Using Census data, we can scale the average support of population subgorups of interest in proportion to their representation in the state population.
+The US Census is a good source of information about characteristics of the full US population. Using Census data, we can scale the average support of population subgroups of interest in proportion to their representation in the state population.
 
 ## Data
 
@@ -178,7 +178,7 @@ Census <- Census %>% mutate(p.relig=p.evang+p.mormon)
 
 We'll call these averages a disaggregate model -- just taking the mean responses within each state. 
 
-```{r empirical, cache=TRUE}
+```{r empirical, cache=TRUE,warning=FALSE,message=FALSE}
 # Get state averages
 mod.disag=marriage.data%>%
   group_by(state) %>%
@@ -192,7 +192,7 @@ These averages will not be representative of the actual statewide means if the s
 
 First, we find within-group averages in each state.
 
-```{r groupmeans, cache=TRUE}
+```{r groupmeans, cache=TRUE,warning=FALSE,message=FALSE}
 # Find average within each group
 grp.means<-marriage.data%>% 
   group_by(state,region,race.female,age.edu.cat,p.relig,kerry.04) %>%
@@ -203,7 +203,7 @@ grp.means<-marriage.data%>%
 
 Next we add the group's percentage in each state.
 
-```{r grouppct, cache=TRUE}
+```{r grouppct, cache=TRUE,warning=FALSE,message=FALSE}
 grp.means<- Census %>%
   select(state, region, kerry.04, race.female, age.edu.cat, p.relig, 
          cpercent.state) %>%
@@ -212,7 +212,7 @@ grp.means<- Census %>%
 
 ## Poststratifying sample estimates
 
-```{r poststratempirical, cache=TRUE}
+```{r poststratempirical, cache=TRUE,warning=FALSE,message=FALSE}
 # sum scaled average and get total state averages
 mod.disag.ps<-grp.means %>%
   group_by(state) %>%
@@ -240,7 +240,7 @@ disag.point
 
 ## Plots
 
-```{r showplot, echo=FALSE, cache=TRUE, out.width = '700px', dpi=200}
+```{r showplot, echo=FALSE, cache=TRUE, out.width = '700px', dpi=200,warning=FALSE,message=FALSE}
 disag.point <- bind_rows(mod.disag,mod.disag.ps) %>%
   group_by(model) %>%
   arrange(support, .by_group=TRUE) %>%
@@ -274,7 +274,7 @@ grp.means %>%
 
 ## Demographic representation by state
 
-```{r demogrepb, echo=FALSE, cache=TRUE, out.width = '550px', dpi=200}
+```{r demogrepb, echo=FALSE, cache=TRUE, out.width = '550px', dpi=200,warning=FALSE,message=FALSE}
 grp.means %>%
   group_by(state) %>%
   summarize(total_percent=sum(cpercent.state, na.rm=TRUE)) %>%
@@ -308,10 +308,10 @@ We'll denote each individual as *i* with indices for race-gender combination, ag
 ## Model
 
 \[
-\mathrm{logit}\left(\mathrm{Pr}(y_i = 1)\right) = \beta_0 + \alpha^{race,gender}_{j[i]} +  \alpha^{age,edu}_{k[i]} + \alpha^{state}_{s[i]}
+\mathrm{logit}\left(\mathrm{Pr}(y_{ijks} = 1)\right) = \beta_0 + \alpha^{race,gender}_{j[i]} +  \alpha^{age,edu}_{k[i]} + \alpha^{state}_{s[i]}
 \]
 
-We can think of the terms after the intercept as modeled effects for different groups of respondents such as individuals who are a specific age. All of them except the state coefficient will be modeled as drawn from a normal distribution with mean zero and some estimated variance specific to that variable. For example,
+Here $i$ indexes the individual, $j$ the race/gender group, $k$ the age/education group, and $s$ the state. We can think of the terms after the intercept as modeled effects for different groups of respondents such as individuals who are a specific age. All of them except the state coefficient will be modeled as drawn from a normal distribution with mean zero and some estimated variance specific to that variable. For example,
 
 \begin{eqnarray*}
 \alpha^{race,gender}_j &\sim& N(0, \sigma^2_{race,gender}), ~~~\mathrm{j=1, ..., 6} \\
@@ -321,7 +321,7 @@ We can think of the terms after the intercept as modeled effects for different g
 
 ## Model
 
-For the state effect, we model the mean for the state effect as a function of 3 state level variables: the region into which the state falls, the state’s conservative (defined as evangelical+LDS) religious percentage, and its Democratic 2004 presidential vote share.
+For the state effect, we model the mean for the state effect as a function of 3 state level variables: the region into which the state falls, the state’s conservative (defined as evangelical+LDS) religious percentage, and its Democratic 2004 presidential vote share. Here $m[s]$ indexes the region $m$ containing state or entity $s$ (regions include the District of Columbia, Midwest, Northeast, South, and West).
 
 $$\alpha^{state}_s \sim N(\alpha^{reg}_{m[s]} + \beta^{relig}\cdot relig_s + \beta^{vote} \cdot vote_s, \sigma^2_{state}),$$ $\mathrm{s = 1, ..., 51}$,
 $$\alpha^{reg}_m \sim N(0,\sigma^2_{region})$$
@@ -334,7 +334,7 @@ $$\alpha^{reg}_m \sim N(0,\sigma^2_{region})$$
 ```{r indiv1, cache=TRUE}
 #run individual-level opinion model
 ml.mod <- glmer(formula = yes.of.all ~ (1|race.female)
-                    + (1|age.cat) + (1|edu.cat) + (1|age.edu.cat)
+                + (1|age.edu.cat)
                     + (1|state) + (1|region) + 
                     + p.relig + kerry.04,
                     data=marriage.data, family=binomial(link="logit"))
@@ -361,7 +361,7 @@ marriage.data %>%
 ## Predictions 
 Using the predict package, we make predictions in states, broken out by the demographic groups of interest, which will allow us to poststratify down the road. For now we calculate the predictions, and we'll examine them closely later.
 
-```{r predm1, cache=TRUE}
+```{r predm1, cache=TRUE,warning=FALSE,message=FALSE}
 ps.ml.mod <- Census %>%
   mutate(support=predict(ml.mod,newdata=.,allow.new.levels=TRUE,type='response')) %>%
   mutate(support=support*cpercent.state) %>%
@@ -374,7 +374,7 @@ ps.ml.mod <- Census %>%
 Now we fit a fully Bayesian model, with same data model as the ML model but with some weakly informative priors on the SD's of varying intercepts that will help with borrowing of information and convergence.
 
 ```{r bayesmod, eval=FALSE}
-bayes.mod <- brm(yes.of.all ~ (1|race.female) + (1|age.cat) + (1|edu.cat)
+bayes.mod <- brm(yes.of.all ~ (1|race.female) 
                  + (1|age.edu.cat) + (1|state) + (1|region)
                  + p.relig + kerry.04,
                  data=marriage.data, family=bernoulli(),
@@ -389,15 +389,13 @@ bayes.mod <- brm(yes.of.all ~ (1|race.female) + (1|age.cat) + (1|edu.cat)
 
 ## Bayesian model 
 
-```{r bayesmod2, echo=FALSE, cache=TRUE}
-bayes.mod <- brm(yes.of.all ~ (1|race.female) + (1|age.cat) + (1|edu.cat)
+```{r bayesmod2, echo=FALSE, cache=TRUE, warning=FALSE,message=FALSE}
+bayes.mod <- brm(yes.of.all ~ (1|race.female) 
                  + (1|age.edu.cat) + (1|state) + (1|region)
                  + p.relig + kerry.04,
                  data=marriage.data, family=bernoulli(),
                  prior=c(set_prior("normal(0,0.2)", class='b'),
                          set_prior("normal(0,0.2)", class='sd', group="race.female"),
-                         set_prior("normal(0,0.2)", class='sd', group="age.cat"),
-                         set_prior("normal(0,0.2)", class='sd', group="edu.cat"),
                          set_prior("normal(0,0.2)", class='sd', group="age.edu.cat"),
                          set_prior("normal(0,0.2)", class='sd', group="state"),
                          set_prior("normal(0,0.2)", class='sd', group="region")))
@@ -406,7 +404,9 @@ bayes.mod <- brm(yes.of.all ~ (1|race.female) + (1|age.cat) + (1|edu.cat)
 ## Bayesian model results
 
 ```{r bayesmod3,cache=TRUE}
+# Estimates
 summary(bayes.mod)
+
 ```
 
 ## Benefits of Bayesian approach
@@ -426,9 +426,10 @@ bayes.mod %>%
 
 ## Benefits of Bayesian approach
 
-Recall the sd estimates from the frequentist model were 0.06 for state, 0.22 for region, 0.23 for race.female, 0.32 for edu.cat,0.10 for age.edu.cat, and 0.41 for age.cat.
+Recall the sd estimates from the frequentist model were around 0 for state, 0.19 for region, 0.22 for race.female, and 0.63 for age.edu.cat.
 
-```{r bayesbenefits2, echo=FALSE, cache=TRUE, warnings=FALSE, out.width = '380px', dpi=200}
+```{r bayesbenefits2, echo=FALSE, cache=TRUE, warning=FALSE, comment=FALSE, out.width = '550px', dpi=200}
+#generate plot of posteriors
 bayes.mod %>%
   gather_samples(`sd.*`,regex=TRUE) %>%
   ungroup() %>%
@@ -436,7 +437,7 @@ bayes.mod %>%
   ggplot(aes(y=group,x=estimate)) +
   ggridges::geom_density_ridges(aes(height=..density..),
                                 rel_min_height=0.01,stat="density",
-                                scale=1.5) 
+                                scale=1.51) 
 ```
 <small>
 Wow, this is cool!  The Bayesian model gives you an idea of the full posterior distribution of values, from which we can sample, as opposed to a single point estimate. 
@@ -444,7 +445,7 @@ Wow, this is cool!  The Bayesian model gives you an idea of the full posterior d
 
 ## Poststratifying Bayes
 
-```{r postbayes, cache=TRUE}
+```{r postbayes, cache=TRUE, warning=FALSE}
 #next let's get the point estimate and poststratify from the Bayesian model
 ps.bayes.mod <- bayes.mod %>%
   add_predicted_samples(newdata=Census, allow_new_levels=TRUE) %>%

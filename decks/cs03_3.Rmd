@@ -67,7 +67,7 @@ This tutorial draws heavily on Jonathan Kastellec's MrP Primer and [Tim Mastny's
 
 ## Analysis goal
 
-The goal is to estimate support for gay marriage in each state based on survey data that are potentially non-representative. Because not all subgroups of the population are equally likely to respond to polls, we worry that relying only on a survey could lead to biased estimates of support for gay marriage.  (For example, younger people may be more likely than older people to answer questions about gay marriage.)
+The goal is to estimate support for gay marriage in each state based on survey data that are potentially non-representative. Because not all subgroups of the population are equally likely to respond to polls, we worry that relying only on a survey could lead to biased estimates of support for gay marriage.  (For example, younger people may be more likely than older people to answer questions about gay marriage; however, older people may be more likely than younger people to answer the phone and participate in a survey.)
 
 The US Census is a good source of information about characteristics of the full US population. Using Census data, we can scale the average support of population subgroups of interest in proportion to their representation in the state population.
 

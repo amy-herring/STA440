@@ -77,7 +77,7 @@ We will present predictions and corresponding uncertainty quantification weekly.
 
 - Interim report: who votes in NC? Using the NC voter files, identify who votes in NC so that these data can be used in conjunction with surveys and other data in order to predict outcomes of NC congressional elections. Present results in short (<5 min) video presentation on October 16. This report will be peer reviewed.
 
-- Weekly updates on predictions starting 9/16: provide point and interval estimates of the probability of the following:
+- Weekly updates on predictions starting 10/16: provide point and interval estimates of the probability of the following:
   - probability that President Trump is re-elected
   - probability the US Senate remains in Republican control
   - probability that the Republican candidate wins each of the 13 NC Congressional elections (separately)

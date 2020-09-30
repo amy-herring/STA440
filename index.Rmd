@@ -84,18 +84,18 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | September 28    | Lab: CS2 and Project Q&A  |   |
 | September 30   | Case Study 3: Election Prediction; Poststratification and Weighting  | Case Study 2 Due |
 | October 2   |  "Mr. P"; US Election System | Case Study 2 Peer Reviews; Midsemester grades (my deliverable)  |
-| October 5    |  Forecasting US Presidential Elections |   |
-| October 7    |  |  |
-| October 9    |  | Case Study 2 Response and Revision  |
-| October 12    |  |   | 
+| October 5    |  Forecasting US Presidential Elections; Linzer Model |   |
+| October 7    | Forecasting US Presidential Elections: Data Sources |  |
+| October 9    | Economist/Gelman Model | Case Study 2 Response and Revision  |
+| October 12    | Multilevel Logistic Models |   | 
 | October 14    |  |  |
 | October 16   |  Project Presentations |  Project Methods and Analysis Plan   | 
 | October 19    | Project Presentations |  Project Peer Reviews | 
 | October 21    | Project Presentations |   |
 | October 23   | Project Presentations | Case Study 3: Who Votes in NC? |
 | October 26    | Project Presentations | Case Study 3 Who Votes Peer Reviews  | 
-| October 28   |  |  |
-| October 30   | Lab |  |
+| October 28   | Project Presentations |  |
+| October 30   | Project Presentations |  |
 | November 2   |  | Case Study 3 Due |
 | November 4   | Case Study 3 Highs and Lows Presentations  | |
 | November 6   |  |  |

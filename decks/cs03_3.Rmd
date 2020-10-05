@@ -73,7 +73,7 @@ The US Census is a good source of information about characteristics of the full 
 
 ## Data
 
-- A compilation of national gay marriage polls will provide information on support of gay marriage. Five national polls were conducted in 2004 and include information on state, gender, race/ethnicity, education, age, and party identification.
+- A compilation of national gay marriage polls will provide information on support of gay marriage. Five national polls were conducted in 2004 and include information on state, gender, race/ethnicity, education, age, and party identification. 
 - State level data provide information including \% of religious voters, voting history (Democrat or Republican), etc.
 - Census data will be used to estimate the \% of voters in subgroups in the state, given that poll respondents may not mirror the demographics of voting-age citizens. Ultimately, we need a dataset of the population counts for each subgroup, e.g. how many African Americans aged 18-25 went to college and reside in NC. For this tutorial, we will use the 5% Public Use Microdata Sample from the 2000 census. 
 

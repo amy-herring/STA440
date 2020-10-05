@@ -70,6 +70,7 @@ We will present predictions and corresponding uncertainty quantification weekly.
 - [Basics of Election Prediction](decks/cs03_1.html)
 - [Poststratification and Weighting](decks/cs03_2.html)
 - [MRP Tutorial](decks/cs03_3.html)
+- [Random Effects Logistic Models](decks/glmm_01_deck.html)
 
 # Reports
 

@@ -135,8 +135,8 @@ States are correlated. What is the correlation of logit$(\pi_{i2})$ and logit$(\
 \end{align*}
 
 ## Linzer (2013) - Results
-\centering
-\includegraphics[width=\textwidth]{polling_intro/Linzer_Results.png}
+
+![](images/Linzer_Results.png){width=11in}
 
 ## Linzer (2013) Example Setup
 Suppose you want to model L swing states for J days before the election and you have K polls. Prepare the following in a list: 

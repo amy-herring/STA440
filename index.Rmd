@@ -85,23 +85,23 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | September 30   | Case Study 3: Election Prediction; Poststratification and Weighting  | Case Study 2 Due |
 | October 2   |  "Mr. P"; US Election System | Case Study 2 Peer Reviews; Midsemester grades (my deliverable)  |
 | October 5    |  Forecasting US Presidential Elections; Linzer Model |   |
-| October 7    | Forecasting US Presidential Elections: Data Sources |  |
-| October 9    | Economist/Gelman Model | Case Study 2 Response and Revision  |
-| October 12    | Multilevel Logistic Models |   | 
+| October 7    | Forecasting US Presidential Elections; Multilevel Logistic Models |  |
+| October 9    |  | Case Study 2 Response and Revision  |
+| October 12    | Economist/Gelman Model |   | 
 | October 14    |  |  |
-| October 16   |  Project Presentations |  Project Methods and Analysis Plan   | 
+| October 16   |  Project Presentations |  Project Methods, Analysis Plan, and Preliminary Results; First Predictions Due   | 
 | October 19    | Project Presentations |  Project Peer Reviews | 
 | October 21    | Project Presentations |   |
-| October 23   | Project Presentations | Case Study 3: Who Votes in NC? |
+| October 23   | Project Presentations | Case Study 3: Who Votes in NC?; Updated Predictions |
 | October 26    | Project Presentations | Case Study 3 Who Votes Peer Reviews  | 
 | October 28   | Project Presentations |  |
-| October 30   | Project Presentations |  |
+| October 30   | Project Presentations | Updated Predictions |
 | November 2   |  | Case Study 3 Due |
 | November 4   | Case Study 3 Models; Highs and Lows Presentations  | |
 | November 6   | Case Study 3 Models; Highs and Lows Presentations |  |
 | November 9   |  | Individual Project Due |
 | November 11   |  | Project Peer Reviews  | 
-| November 13   |  |  |
+| November 13   | Data Science Ethics Discussion |  |
 | November 16   |  | Project Response and Revision Due |
 | November 19   |  | Last Day to Submit Project Revision Without Late Penalty |
 

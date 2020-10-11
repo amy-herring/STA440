@@ -87,7 +87,7 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | October 5    |  Forecasting US Presidential Elections; Linzer Model |   |
 | October 7    | Forecasting US Presidential Elections; Multilevel Logistic Models |  |
 | October 9    |  | Case Study 2 Response and Revision  |
-| October 12    | Economist/Gelman Model |   | 
+| October 12    | Forecasting Models |   | 
 | October 14    |  |  |
 | October 16   |  Project Presentations |  Project Methods, Analysis Plan, and Preliminary Results; First Predictions Due   | 
 | October 19    | Project Presentations |  Project Peer Reviews | 

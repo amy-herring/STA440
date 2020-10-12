@@ -72,6 +72,7 @@ We will present predictions and corresponding uncertainty quantification weekly.
 - [MRP Tutorial](decks/cs03_3.html)
 - [Predicting Electoral College Outcomes (Graham's Lab 10/5)](decks/electoralcollege.html)
 - [Random Effects Logistic Models](decks/glmm_01_deck.html)
+- [Election Modeling in Lab](decks/electionmodellab.html)
 
 # Reports
 

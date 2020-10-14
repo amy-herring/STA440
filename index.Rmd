@@ -89,9 +89,9 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | October 9    |  | Case Study 2 Response and Revision  |
 | October 12    | Forecasting Models |   | 
 | October 14    |  |  |
-| October 16   |  Project Presentations |  Project Methods, Analysis Plan, and Preliminary Results; First Predictions Due   | 
-| October 19    | Project Presentations |  Project Peer Reviews | 
-| October 21    | Project Presentations |   |
+| October 16   |  Project Presentations |  First Predictions Due   | 
+| October 19    | Project Presentations | Project Methods, Analysis Plan, and Preliminary Results (DUE AT 6AM ET)  | 
+| October 21    | Project Presentations | Project Peer Reviews (due 10am ET)  |
 | October 23   | Project Presentations | Case Study 3: Who Votes in NC?; Updated Predictions |
 | October 26    | Project Presentations | Case Study 3 Who Votes Peer Reviews  | 
 | October 28   | Project Presentations |  |

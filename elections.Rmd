@@ -105,4 +105,24 @@ $$
 Point estimates within the $CI$ are penalized linearly and outside the $CI$ are penalized linearly with a higher slope. There is an additional penalty for wide confidence intervals, but only at 1/10th (or less) the cost of missing the point estimate. 
 
 The term on the second line of the loss function only comes into play when a confidence interval did not include 0.5. That is, the team was very certain of calling the race for one side or the other. Being very certain and wrong incurs an additional loss. Being very certain and right incurs utility, but with lower magnitude than being wrong. The idea behind this choice is some races should be easy to call and being unambiguously wrong with the confidence interval should hurt more.
+
+## Weekly Prediction Update: October 16
+
+- Estimates for the probability that President Trump wins re-election ranged from 0.004 to 0.49 (median 0.20)
+- Estimates for the probability that the Senate remains under Republican control ranged from 0.093 to 0.746 (median 0.43 )
+- Estimates for Tillis (vs Cunningham) two-party vote share ranged from 39-64% (median 47.5%) with confidence interval widths ranging from 1 to 28
+- 1st Congressional District of NC:  2/6 teams pick Smith
+- 2nd District: 5/6 teams pick Ross
+- 3rd District: 5/6 teams pick Murphy
+- 4th District: 5/6 teams pick Price
+- 5th District: all picked Foxx
+- 6th District: 4/6 teams pick Manning
+- 7th District: all teams pick Rouzer
+- 8th District: all teams pick Hudson
+- 9th District: 3/6 teams pick Bishop
+- 10th District: all teams pick McHenry
+- 11th District: all teams pick Cawthorn
+- 12th District: all teams pick Adams (with varying vote shares -- check that ballot!)
+- 13th District: all teams pick Budd
+- Estimates for the probability that
                                                                                   

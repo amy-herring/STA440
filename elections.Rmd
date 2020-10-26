@@ -124,5 +124,23 @@ The term on the second line of the loss function only comes into play when a con
 - 11th District: all teams pick Cawthorn
 - 12th District: all teams pick Adams (with varying vote shares -- check that ballot!)
 - 13th District: all teams pick Budd
-- Estimates for the probability that
+
+## Weekly Prediction Update: October 26
+
+- Estimates for the probability that President Trump wins re-election ranged from 0.06 to 0.89 (median 0.23)
+- Estimates for the probability that the Senate remains under Republican control ranged from 0.17 to 0.82 (median 0.31 )
+- Estimates for Tillis (vs Cunningham) two-party vote share ranged from 32-48% (median 46.5%) 
+- 1st Congressional District of NC:  1/6 teams pick Smith
+- 2nd District: 5/6 teams pick Ross
+- 3rd District: 5/6 teams pick Murphy
+- 4th District: 5/6 teams pick Price
+- 5th District: 5/6 pick Foxx
+- 6th District: 4/6 teams pick Manning
+- 7th District: 5/6 teams pick Rouzer
+- 8th District: 5/6 teams pick Hudson
+- 9th District: 3/6 teams pick Bishop
+- 10th District: 5/6 teams pick McHenry
+- 11th District: 4/6 teams pick Cawthorn
+- 12th District: 5/6 teams pick Adams (with varying vote shares -- check that ballot!)
+- 13th District: all teams pick Budd
                                                                                   

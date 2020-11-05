@@ -99,9 +99,9 @@ Note: this schedule is approximate and is likely to be modified as the course pr
 | November 2   | Project Presentations  | Case Study 3 due 8AM on November 3 (NO EXTENSIONS) |
 | November 4   | Case Study 3 Models; Highs and Lows Presentations  | |
 | November 6   | Case Study 3 Models; Highs and Lows Presentations |  |
-| November 9   |  | Individual Project Due |
-| November 11   |  | Project Peer Reviews  | 
-| November 13   | Data Science Ethics Discussion |  |
-| November 16   |  | Project Response and Revision Due |
+| November 9   | Lab: Brainstorm Project Challenges | Individual Project Due |
+| November 11   | Class: Brainstorm Project Challenges | Project Peer Reviews  | 
+| November 13   | Data Science Ethics Discussion  | Read 2 Data Ethics Papers on Sakai  |
+| November 16   | Class: Last Minute Project Challenges | Project Response and Revision Due |
 | November 19   |  | Last Day to Submit Project Revision Without Late Penalty |
 
